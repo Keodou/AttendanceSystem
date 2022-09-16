@@ -15,5 +15,7 @@ namespace RFIDSystem
         public string RFIDTag { get; set; }
 
         public string Attendance { get; set; }
+
+        public string AttendanceTime { get; set; }
     }
 }
