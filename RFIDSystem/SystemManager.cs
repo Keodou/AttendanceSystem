@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RFIDSystem.Data;
 
 namespace RFIDSystem
 {
@@ -12,38 +8,42 @@ namespace RFIDSystem
         private readonly Reader _reader;
         private readonly StudentsRepository _studentsRepository;
         private List<Student> _students;
+        private RFIDSystemDbContext _dbContext;
 
         public SystemManager(string label, Reader reader, StudentsRepository studentsRepository,
-            List<Student> students)
+            RFIDSystemDbContext dbContext)
         {
             _label = label;
             _reader = reader;
             _studentsRepository = studentsRepository;
-            _students = students;
+            _dbContext = dbContext;
         }
 
-        public void SelectMenuVariable(string variable)
+        public void InputMenuVariable(string variable)
+        {
+            Console.WriteLine("Выберите пункт");
+            variable = Console.ReadLine();
+            SelectMenuVariable(variable);
+        }
+
+        private void SelectMenuVariable(string variable)
         {
             switch (variable)
             {
-                case "":
-                    Console.WriteLine("Вы ничего не ввели! Введите значение");
-                    Repeat(variable);
-                    break;
                 case "1":
                     Console.WriteLine("Приложите метку для сканирования");
                     ScanTheLabel();
-                    Repeat(variable);
+                    InputMenuVariable(variable);
                     break;
                 case "2":
                     Console.WriteLine("Список студентов");
-                    _students = _studentsRepository.GetStudents();
+                    _students = _studentsRepository.GetStudentsDb();
                     OutputStudents();
-                    Repeat(variable);
+                    InputMenuVariable(variable);
                     break;
                 default:
-                    Console.WriteLine("Такой вариант отсутствует!");
-                    Repeat(variable);
+                    Console.WriteLine("Введите корректное значение!");
+                    InputMenuVariable(variable);
                     break;
             }
         }
@@ -70,13 +70,6 @@ namespace RFIDSystem
                     $"\nAttendanceTime: {student.AttendanceTime}");
                 Console.WriteLine();
             }
-        }
-
-        private void Repeat(string variable)
-        {
-            Console.WriteLine("Выберите пункт");
-            variable = Console.ReadLine();
-            SelectMenuVariable(variable);
         }
     }
 }
