@@ -40,6 +40,21 @@ namespace RFIDSystem
             _dbContext.SaveChanges();
         }
 
+        public void UpdateStudentDb(string tag)
+        {
+            // _dbContext.Entry(entity).State = EntityState.Modified;
+            var student = _dbContext.Students
+                .Where(l => l.RFIDTag == tag)
+                .FirstOrDefault();
+            if (student != null)
+            {
+                student.Attendance = "Присутствует";
+                student.AttendanceTime = DateTime.Now.ToString();
+            }
+
+            _dbContext.SaveChanges();
+        }
+
         public List<Student> GetStudentsDb()
         {
             return _dbContext.Students.OrderBy(s => s.Name).ToList();

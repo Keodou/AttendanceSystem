@@ -1,4 +1,5 @@
-﻿using RFIDSystem.Data;
+﻿using RFIDSystem;
+using RFIDSystem.Data;
 
 namespace RFIDSystem
 {
@@ -8,15 +9,12 @@ namespace RFIDSystem
         private readonly Reader _reader;
         private readonly StudentsRepository _studentsRepository;
         private List<Student> _students;
-        private RFIDSystemDbContext _dbContext;
 
-        public SystemManager(string label, Reader reader, StudentsRepository studentsRepository,
-            RFIDSystemDbContext dbContext)
+        public SystemManager(string label, Reader reader, StudentsRepository studentsRepository)
         {
             _label = label;
             _reader = reader;
             _studentsRepository = studentsRepository;
-            _dbContext = dbContext;
         }
 
         public void InputMenuVariable(string variable)
@@ -52,14 +50,16 @@ namespace RFIDSystem
         {
             _label = _reader.GetCardId(_label);
             Console.WriteLine(_label);
-            foreach (var student in _students)
+
+            _studentsRepository.UpdateStudentDb(_label);
+            /*foreach (var student in _students)
             {
                 if (_label == student.RFIDTag)
                 {
                     student.Attendance = "Присутствует";
                     student.AttendanceTime = DateTime.Now.ToString();
                 }
-            }
+            }*/
         }
 
         private void OutputStudents()

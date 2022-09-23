@@ -11,7 +11,7 @@ SerialPort RFID = new();
 // List<Student> students = new();
 StudentsRepository studentRepository = new(dbContext);
 Reader reader = new(RFID);
-SystemManager systemManager = new(label, reader, studentRepository, dbContext);
+SystemManager systemManager = new(label, reader, studentRepository);
 
 // Заполнение коллекции
 // students = studentRepository.AddStudents();
