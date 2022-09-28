@@ -1,5 +1,4 @@
-﻿using RFIDSystem;
-using RFIDSystem.Data;
+﻿using RFIDSystem.Interfaces;
 
 namespace RFIDSystem
 {
@@ -7,20 +6,19 @@ namespace RFIDSystem
     {
         private string _label;
         private readonly Reader _reader;
-        private readonly StudentsRepository _studentsRepository;
-        private List<Student> _students;
+        private readonly IEntriesRepository _studentsRepository;
 
-        public SystemManager(string label, Reader reader, StudentsRepository studentsRepository)
+        public SystemManager(string label, Reader reader, IEntriesRepository studentsRepository)
         {
             _label = label;
             _reader = reader;
             _studentsRepository = studentsRepository;
         }
 
-        public void InputMenuVariable(string variable)
+        public void InputVariable()
         {
             Console.WriteLine("Выберите пункт");
-            variable = Console.ReadLine();
+            var variable = Console.ReadLine();
             SelectMenuVariable(variable);
         }
 
@@ -28,20 +26,21 @@ namespace RFIDSystem
         {
             switch (variable)
             {
-                case "1":
+                case "/scan":
                     Console.WriteLine("Приложите метку для сканирования");
                     ScanTheLabel();
-                    InputMenuVariable(variable);
+                    InputVariable();
                     break;
-                case "2":
+                case "/list":
                     Console.WriteLine("Список студентов");
-                    _students = _studentsRepository.GetStudentsDb();
                     OutputStudents();
-                    InputMenuVariable(variable);
+                    InputVariable();
+                    break;
+                case "/create":
                     break;
                 default:
                     Console.WriteLine("Введите корректное значение!");
-                    InputMenuVariable(variable);
+                    InputVariable();
                     break;
             }
         }
@@ -50,21 +49,13 @@ namespace RFIDSystem
         {
             _label = _reader.GetCardId(_label);
             Console.WriteLine(_label);
-
-            _studentsRepository.UpdateStudentDb(_label);
-            /*foreach (var student in _students)
-            {
-                if (_label == student.RFIDTag)
-                {
-                    student.Attendance = "Присутствует";
-                    student.AttendanceTime = DateTime.Now.ToString();
-                }
-            }*/
+            _studentsRepository.UpdateEntryDb(_label);
         }
 
         private void OutputStudents()
         {
-            foreach (var student in _students)
+            var students = _studentsRepository.GetEntriesDb();
+            foreach (var student in students)
             {
                 Console.WriteLine($"Name: {student.Name}\nAttendance: {student.Attendance}" +
                     $"\nAttendanceTime: {student.AttendanceTime}");

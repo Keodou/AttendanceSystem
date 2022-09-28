@@ -1,31 +1,16 @@
 ﻿using RFIDSystem.Data;
+using RFIDSystem.Interfaces;
 
 namespace RFIDSystem
 {
-    public class StudentsRepository
+    public class StudentsRepository : IEntriesRepository
     {
         private readonly RFIDSystemDbContext _dbContext;
-        //private readonly List<Student> _students;
 
         public StudentsRepository(RFIDSystemDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-
-        /*public List<Student> AddStudents()
-        {
-            _students.Add(new Student() { Id = 1, Name = "Каминский Алексей", RFIDTag = " 99 62 36 BB ", 
-                Attendance = "Отсутствует", AttendanceTime = "00.00.00"});
-            _students.Add(new Student() { Id = 2, Name = "Коробейщиков Дмитрий", RFIDTag = " B9 8C 2C BB ", 
-                Attendance = "Отсутствует", AttendanceTime = "00.00.00"});
-
-            return _students.OrderBy(s => s.Name).ToList();
-        }*/
-
-        /*public List<Student> GetStudents()
-        {
-            return _students.OrderBy(s => s.Name).ToList();
-        }*/
 
         public void AddStudentsDb()
         {
@@ -40,9 +25,8 @@ namespace RFIDSystem
             _dbContext.SaveChanges();
         }
 
-        public void UpdateStudentDb(string tag)
+        public void UpdateEntryDb(string tag)
         {
-            // _dbContext.Entry(entity).State = EntityState.Modified;
             var student = _dbContext.Students
                 .Where(l => l.RFIDTag == tag)
                 .FirstOrDefault();
@@ -55,9 +39,9 @@ namespace RFIDSystem
             _dbContext.SaveChanges();
         }
 
-        public List<Student> GetStudentsDb()
+        public IQueryable<Student> GetEntriesDb()
         {
-            return _dbContext.Students.OrderBy(s => s.Name).ToList();
+            return _dbContext.Students.OrderBy(s => s.Name);
         }
     }
 }
