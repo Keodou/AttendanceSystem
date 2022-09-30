@@ -4,13 +4,13 @@ namespace RFIDSystem
 {
     public class SystemManager
     {
-        private string _label;
+        private readonly string _tag;
         private readonly Reader _reader;
         private readonly IEntriesRepository _studentsRepository;
 
-        public SystemManager(string label, Reader reader, IEntriesRepository studentsRepository)
+        public SystemManager(Reader reader, IEntriesRepository studentsRepository)
         {
-            _label = label;
+            _tag = "";
             _reader = reader;
             _studentsRepository = studentsRepository;
         }
@@ -37,6 +37,7 @@ namespace RFIDSystem
                     InputVariable();
                     break;
                 case "/create":
+                    EditEntry();
                     break;
                 default:
                     Console.WriteLine("Введите корректное значение!");
@@ -47,9 +48,9 @@ namespace RFIDSystem
 
         private void ScanTheLabel()
         {
-            _label = _reader.GetCardId(_label);
-            Console.WriteLine(_label);
-            _studentsRepository.UpdateEntryDb(_label);
+            var tag = _reader.GetRfidTag(_tag);
+            Console.WriteLine(_tag);
+            _studentsRepository.UpdateAttendance(tag);
         }
 
         private void OutputStudents()
@@ -61,6 +62,27 @@ namespace RFIDSystem
                     $"\nAttendanceTime: {student.AttendanceTime}");
                 Console.WriteLine();
             }
+        }
+
+        /*private void InputEntryInfo()
+        {
+            string name = Console.ReadLine();
+            string rfidTag = Console.ReadLine();
+            string attendance = Console.ReadLine();
+            string attendanceTime = Console.ReadLine();
+        }*/
+
+        private void EditEntry()
+        {
+            var student = new Student()
+            {
+                Name = Console.ReadLine(),
+                RFIDTag = Console.ReadLine(),
+                Attendance = Console.ReadLine(),
+                AttendanceTime = Console.ReadLine()
+            };
+
+            _studentsRepository.SaveChanges(student);
         }
     }
 }

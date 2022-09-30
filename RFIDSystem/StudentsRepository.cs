@@ -25,7 +25,7 @@ namespace RFIDSystem
             _dbContext.SaveChanges();
         }
 
-        public void UpdateEntryDb(string tag)
+        public void UpdateAttendance(string tag)
         {
             var student = _dbContext.Students
                 .Where(l => l.RFIDTag == tag)
@@ -36,6 +36,12 @@ namespace RFIDSystem
                 student.AttendanceTime = DateTime.Now.ToString();
             }
 
+            _dbContext.SaveChanges();
+        }
+
+        public void SaveChanges(Student student)
+        {
+            _dbContext.Add(student);
             _dbContext.SaveChanges();
         }
 

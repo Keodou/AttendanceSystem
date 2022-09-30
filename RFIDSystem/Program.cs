@@ -3,12 +3,11 @@ using RFIDSystem.Data;
 using System.IO.Ports;
 
 // Initial objects
-string label = "";
 string connectionString = @"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;";
 RFIDSystemDbContext dbContext = new(connectionString);
-SerialPort RFID = new();
+SerialPort rfid = new();
 StudentsRepository studentRepository = new(dbContext);
-Reader reader = new(RFID);
-SystemManager systemManager = new(label, reader, studentRepository);
-//studentRepository.AddStudentsDb();
+Reader reader = new(rfid);
+SystemManager systemManager = new(reader, studentRepository);
+
 systemManager.InputVariable();
