@@ -1,14 +1,15 @@
-﻿using RFIDSystem.Interfaces;
+﻿using DAL.Entities;
+using DAL.Interfaces;
 
 namespace RFIDSystem
 {
-    public class SystemManager
+    public class ConsoleManager
     {
         private readonly string _tag;
         private readonly Reader _reader;
         private readonly IEntriesRepository _studentsRepository;
 
-        public SystemManager(Reader reader, IEntriesRepository studentsRepository)
+        public ConsoleManager(Reader reader, IEntriesRepository studentsRepository)
         {
             _tag = "";
             _reader = reader;
@@ -22,6 +23,7 @@ namespace RFIDSystem
             SelectMenuVariable(variable);
         }
 
+        // TODO: Рассмотреть альтернативные способы создания меню
         private void SelectMenuVariable(string variable)
         {
             switch (variable)
@@ -53,6 +55,7 @@ namespace RFIDSystem
             _studentsRepository.UpdateAttendance(tag);
         }
 
+        // TODO: Сделать операции с БД асинхронными
         private void OutputStudents()
         {
             var students = _studentsRepository.GetEntriesDb();
@@ -64,14 +67,6 @@ namespace RFIDSystem
             }
         }
 
-        /*private void InputEntryInfo()
-        {
-            string name = Console.ReadLine();
-            string rfidTag = Console.ReadLine();
-            string attendance = Console.ReadLine();
-            string attendanceTime = Console.ReadLine();
-        }*/
-
         private void EditEntry()
         {
             var student = new Student()
@@ -81,7 +76,6 @@ namespace RFIDSystem
                 Attendance = Console.ReadLine(),
                 AttendanceTime = Console.ReadLine()
             };
-
             _studentsRepository.SaveChanges(student);
         }
     }

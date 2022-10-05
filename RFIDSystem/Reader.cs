@@ -13,13 +13,13 @@ namespace RFIDSystem
             _rfidReader = rfidReader;
         }
 
-        public string GetRfidTag(string cardId)
+        public string GetRfidTag(string tag)
         {
             _rfidReader.Open();
-            cardId = _rfidReader.ReadLine();
+            tag = _rfidReader.ReadLine();
             _rfidReader.Close();
-            cardId = cardId.Replace('\r', ' ');
-            return cardId;
+            tag = tag.Replace('\r', ' ');
+            return tag;
         }
     }
 }

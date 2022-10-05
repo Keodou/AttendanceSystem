@@ -1,7 +1,8 @@
-﻿using RFIDSystem.Data;
-using RFIDSystem.Interfaces;
+﻿using DAL.Data;
+using DAL.Entities;
+using DAL.Interfaces;
 
-namespace RFIDSystem
+namespace DAL
 {
     public class StudentsRepository : IEntriesRepository
     {
@@ -21,7 +22,6 @@ namespace RFIDSystem
                 Attendance = "Отсутствует",
                 AttendanceTime = "00.00.00"
             });
-
             _dbContext.SaveChanges();
         }
 
@@ -35,7 +35,6 @@ namespace RFIDSystem
                 student.Attendance = "Присутствует";
                 student.AttendanceTime = DateTime.Now.ToString();
             }
-
             _dbContext.SaveChanges();
         }
 

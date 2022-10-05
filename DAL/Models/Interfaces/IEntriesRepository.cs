@@ -1,4 +1,6 @@
-﻿namespace RFIDSystem.Interfaces
+﻿using DAL.Entities;
+
+namespace DAL.Interfaces
 {
     public interface IEntriesRepository
     {

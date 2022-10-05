@@ -1,4 +1,4 @@
-﻿namespace RFIDSystem
+﻿namespace DAL.Entities
 {
     public class Student
     {

@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace RFIDSystem.Data
+namespace DAL.Data
 {
     public class RFIDSystemDbContext : DbContext
     {
