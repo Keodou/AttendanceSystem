@@ -29,8 +29,10 @@ namespace RFIDSystem
             switch (variable)
             {
                 case "/scan":
+                    Console.WriteLine("Введите количество студентов в группе");
+                    int number = int.Parse(Console.ReadLine());
                     Console.WriteLine("Приложите метку для сканирования");
-                    ScanTheLabel();
+                    ScanTheLabel(number);
                     InputVariable();
                     break;
                 case "/list":
@@ -48,11 +50,14 @@ namespace RFIDSystem
             }
         }
 
-        private void ScanTheLabel()
+        private void ScanTheLabel(int number)
         {
-            var tag = _reader.GetRfidTag(_tag);
-            Console.WriteLine(_tag);
-            _studentsRepository.UpdateAttendance(tag);
+            for (int i = 0; i < number; i++)
+            {
+                var tag = _reader.GetRfidTag(_tag);
+                Console.WriteLine(tag);
+                _studentsRepository.UpdateAttendance(tag);
+            }
         }
 
         // TODO: Сделать операции с БД асинхронными
