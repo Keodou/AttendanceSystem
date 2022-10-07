@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RFIDSystem", "RFIDSystem\RFIDSystem.csproj", "{5211C44A-10D9-43BD-8415-645F52329010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B2107015-05D5-4D53-8DAB-1949C9E2D264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{B2107015-05D5-4D53-8DAB-1949C9E2D264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASClient", "ASClient\ASClient.csproj", "{08D1D598-FE28-4E99-BE46-7C4190234D62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B2107015-05D5-4D53-8DAB-1949C9E2D264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2107015-05D5-4D53-8DAB-1949C9E2D264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2107015-05D5-4D53-8DAB-1949C9E2D264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D1D598-FE28-4E99-BE46-7C4190234D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D1D598-FE28-4E99-BE46-7C4190234D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D1D598-FE28-4E99-BE46-7C4190234D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D1D598-FE28-4E99-BE46-7C4190234D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
