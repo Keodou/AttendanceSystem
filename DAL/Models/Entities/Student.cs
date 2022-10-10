@@ -6,7 +6,7 @@
 
         public string Name { get; set; }
 
-        public string RFIDTag { get; set; }
+        public string RfidTag { get; set; }
 
         public string Attendance { get; set; }
 

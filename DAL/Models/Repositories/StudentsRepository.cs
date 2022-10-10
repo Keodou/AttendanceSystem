@@ -18,7 +18,7 @@ namespace DAL
             _dbContext.Students.Add(new Student()
             {
                 Name = "Каминский Алексей",
-                RFIDTag = " 99 62 36 BB ",
+                RfidTag = " 99 62 36 BB ",
                 Attendance = "Отсутствует",
                 AttendanceTime = "00.00.00"
             });
@@ -28,7 +28,7 @@ namespace DAL
         public void UpdateAttendance(string tag)
         {
             var student = _dbContext.Students
-                .Where(l => l.RFIDTag == tag)
+                .Where(l => l.RfidTag == tag)
                 .FirstOrDefault();
             if (student != null)
             {

@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Attendance System Utility" Height="450" Width="800">
     <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Считыватель">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Список студентов">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="StudentsList" AutoGenerateColumns="False" Loaded="StudentsList_Loaded">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" Width="10"/>
+                            <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding Path=RfidTag}" Header="RFID метка" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

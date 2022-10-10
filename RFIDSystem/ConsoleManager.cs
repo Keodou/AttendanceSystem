@@ -77,7 +77,7 @@ namespace RFIDSystem
             var student = new Student()
             {
                 Name = Console.ReadLine(),
-                RFIDTag = Console.ReadLine(),
+                RfidTag = Console.ReadLine(),
                 Attendance = Console.ReadLine(),
                 AttendanceTime = Console.ReadLine()
             };
