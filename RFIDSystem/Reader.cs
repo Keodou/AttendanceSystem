@@ -13,6 +13,16 @@ namespace RFIDSystem
             _rfidReader = rfidReader;
         }
 
+        public void OpenSerialPort()
+        {
+            _rfidReader.Open();
+        }
+
+        public void CloseSerialPort()
+        {
+            _rfidReader.Close();
+        }
+
         public string GetRfidTag(string tag)
         {
             _rfidReader.Open();
