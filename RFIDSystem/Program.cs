@@ -2,6 +2,7 @@
 using DAL;
 using System.IO.Ports;
 using DAL.Data;
+using RfidReader;
 
 // Initial objects
 string connectionString = @"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;";

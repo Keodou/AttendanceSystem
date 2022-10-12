@@ -1,5 +1,6 @@
 ﻿using DAL.Entities;
 using DAL.Interfaces;
+using RfidReader;
 
 namespace RFIDSystem
 {

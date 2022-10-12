@@ -66,3 +66,5 @@ C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\bin\Debug\net6.0\Humanizer.dl
 C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\bin\Debug\net6.0\DAL.dll
 C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\bin\Debug\net6.0\DAL.pdb
+C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\bin\Debug\net6.0\RfidReader.dll
+C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\bin\Debug\net6.0\RfidReader.pdb

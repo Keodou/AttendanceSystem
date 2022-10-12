@@ -1,0 +1,12 @@
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\bin\Debug\net6.0\RfidReader.deps.json
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\bin\Debug\net6.0\RfidReader.dll
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\bin\Debug\net6.0\RfidReader.pdb
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\RfidReader.csproj.AssemblyReference.cache
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\RfidReader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\RfidReader.AssemblyInfoInputs.cache
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\RfidReader.AssemblyInfo.cs
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\RfidReader.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\RfidReader.dll
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\refint\RfidReader.dll
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\RfidReader.pdb
+C:\Users\Dmitry\source\repos\RFIDSystem\RfidReader\obj\Debug\net6.0\ref\RfidReader.dll

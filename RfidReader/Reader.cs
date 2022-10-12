@@ -1,6 +1,6 @@
 ﻿using System.IO.Ports;
 
-namespace RFIDSystem
+namespace RfidReader
 {
     public class Reader
     {

@@ -880,6 +880,19 @@
         "runtime": {
           "bin/placeholder/DAL.dll": {}
         }
+      },
+      "RfidReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "System.IO.Ports": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RfidReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RfidReader.dll": {}
+        }
       }
     }
   },
@@ -2234,6 +2247,11 @@
       "type": "project",
       "path": "../DAL/DAL.csproj",
       "msbuildProject": "../DAL/DAL.csproj"
+    },
+    "RfidReader/1.0.0": {
+      "type": "project",
+      "path": "../RfidReader/RfidReader.csproj",
+      "msbuildProject": "../RfidReader/RfidReader.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2242,6 +2260,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.9",
+      "RfidReader >= 1.0.0",
       "System.IO.Ports >= 6.0.0"
     ]
   },
@@ -2279,6 +2298,9 @@
           "projectReferences": {
             "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\DAL\\DAL.csproj": {
               "projectPath": "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\DAL\\DAL.csproj"
+            },
+            "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\RfidReader.csproj": {
+              "projectPath": "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\RfidReader.csproj"
             }
           }
         }

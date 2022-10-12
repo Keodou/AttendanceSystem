@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\RfidReader\RfidReader.csproj" />
   </ItemGroup>
 
 </Project>
