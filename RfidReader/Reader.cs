@@ -4,11 +4,10 @@ namespace RfidReader
 {
     public class Reader
     {
-        private readonly SerialPort _rfidReader;
+        private SerialPort _rfidReader;
 
         public Reader(SerialPort rfidReader)
         {
-            rfidReader.PortName = "COM3";
             rfidReader.BaudRate = 9600;
             _rfidReader = rfidReader;
         }
@@ -21,6 +20,21 @@ namespace RfidReader
         public void CloseSerialPort()
         {
             _rfidReader.Close();
+        }
+
+        public string SelectPort()
+        {
+            string[] ports = SerialPort.GetPortNames();
+            Dictionary<int, string> portNames = new();
+            for (int i = 0; i < ports.Length; i++)
+            {
+                portNames.Add(i, ports[i]);
+                Console.WriteLine($"{i}. {portNames[i]}");
+            }
+            int numPort = int.Parse(Console.ReadLine());
+            _rfidReader.PortName = portNames[numPort];
+            Console.WriteLine(_rfidReader.PortName);
+            return _rfidReader.PortName;
         }
 
         public string GetRfidTag(string tag)

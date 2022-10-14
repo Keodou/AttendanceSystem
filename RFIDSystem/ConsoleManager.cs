@@ -30,8 +30,10 @@ namespace RFIDSystem
             switch (variable)
             {
                 case "/scan":
+                    Console.WriteLine("Выберите порт компьютера");
+                    _reader.SelectPort();
                     Console.WriteLine("Введите количество студентов в группе");
-                    int number = int.Parse(Console.ReadLine());
+                    var number = int.Parse(Console.ReadLine());
                     Console.WriteLine("Приложите метку для сканирования");
                     ScanTheLabel(number);
                     InputVariable();
