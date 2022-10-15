@@ -10,6 +10,12 @@ namespace RfidReader
         {
             rfidReader.BaudRate = 9600;
             _rfidReader = rfidReader;
+            //ports = SerialPort.GetPortNames();
+        }
+
+        public string[] GetPortsArray()
+        {
+            return SerialPort.GetPortNames();
         }
 
         public void OpenSerialPort()
@@ -24,7 +30,7 @@ namespace RfidReader
 
         public string SelectPort()
         {
-            string[] ports = SerialPort.GetPortNames();
+            var ports = GetPortsArray();
             Dictionary<int, string> portNames = new();
             for (int i = 0; i < ports.Length; i++)
             {

@@ -15,7 +15,7 @@
                     <Label Content="Подуключение к порту" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" FontSize="18"/>
                     <Button x:Name="ConnectingSerialPort" Content="Подключиться" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,191,0,0"/>
                     <Label Content="Выбор порта" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top" FontSize="18"/>
-                    <ComboBox HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="SelectedPort" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Список студентов">
