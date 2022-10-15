@@ -13,9 +13,10 @@
                     <Label Content="RFID ID" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="42"/>
                     <Label x:Name="RfidTag" Content=" AA AA AA AA " HorizontalAlignment="Center" Margin="0,76,0,0" VerticalAlignment="Top" FontSize="46" FontWeight="Bold"/>
                     <Label Content="Подуключение к порту" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" FontSize="18"/>
-                    <Button x:Name="ConnectingSerialPort" Content="Подключиться" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,191,0,0"/>
-                    <Label Content="Выбор порта" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top" FontSize="18"/>
-                    <ComboBox x:Name="SelectedPort" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="ButtonConnectPort" Content="Подключиться" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,191,0,0"/>
+                    <Label Content="Выбор порта" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" FontSize="18"/>
+                    <ComboBox x:Name="PortsList" HorizontalAlignment="Center" Margin="0,307,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="ButtonUpdatePorts" Content="Обновить" HorizontalAlignment="Center" Margin="0,343,0,0" VerticalAlignment="Top" FontSize="26" Click="ButtonUpdatePorts_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Список студентов">
