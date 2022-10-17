@@ -27,30 +27,29 @@ namespace ASClient
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly string _connectionString;
-        private readonly RFIDSystemDbContext _rfidSystemDbContext;
-        private readonly StudentsRepository _studentsRepository;
+        private readonly string _connectionString = @"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;";
+        private RFIDSystemDbContext _rfidSystemDbContext;
+        private StudentsRepository _studentsRepository;
         private Reader _reader;
         private SerialPort _rfidPort;
 
         public MainWindow()
         {
             InitializeComponent();
-            _connectionString = @"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;";
-            _rfidSystemDbContext = new(_connectionString);
-            _studentsRepository = new(_rfidSystemDbContext);
-            _rfidPort = new();
-            _reader = new(_rfidPort);
         }
 
         private void StudentsList_Loaded(object sender, RoutedEventArgs e)
         {
+            _rfidSystemDbContext = new(_connectionString);
+            _studentsRepository = new(_rfidSystemDbContext);
             var list = _studentsRepository.GetEntriesDb().ToList();
             StudentsList.ItemsSource = list;
         }
 
         private void ButtonUpdatePorts_Click(object sender, RoutedEventArgs e)
         {
+            _rfidPort = new();
+            _reader = new(_rfidPort);
             var ports = _reader.GetPortsArray();
             PortsList.Items.Clear();
             if (ports != null)
