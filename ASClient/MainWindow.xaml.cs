@@ -60,5 +60,39 @@ namespace ASClient
                 }
             }
         }
+
+        private void ButtonConnectPort_Click(object sender, RoutedEventArgs e)
+        {
+            if (ButtonConnectPort.Content.ToString() == "Подключиться")
+            {
+                try
+                {
+                    _reader.OpenSerialPort();
+                    PortsList.IsEnabled = false;
+                    ButtonUpdatePorts.IsEnabled = false;
+                    ButtonConnectPort.Content = "Отключиться";
+                    //ScanTheLabel();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка подключения");
+                }
+            }
+
+            else if (ButtonConnectPort.Content.ToString() == "Отключиться")
+            {
+                _reader.CloseSerialPort();
+                ButtonUpdatePorts.IsEnabled = true;
+                PortsList.IsEnabled = true;
+                ButtonConnectPort.Content = "Подключиться";
+            }
+        }
+
+        private void ScanTheLabel()
+        {
+            var tag = _reader.GetRfidTag();
+            RfidTag.Content = tag;
+            _studentsRepository.UpdateAttendance(tag);
+        }
     }
 }

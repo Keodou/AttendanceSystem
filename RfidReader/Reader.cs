@@ -51,5 +51,11 @@ namespace RfidReader
             tag = tag.Replace('\r', ' ');
             return tag;
         }
+
+        public string GetRfidTag()
+        {
+            var tag = _rfidReader.ReadLine();
+            return tag.Replace('\r', ' ');
+        }
     }
 }
