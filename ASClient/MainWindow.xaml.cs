@@ -36,20 +36,28 @@ namespace ASClient
         public MainWindow()
         {
             InitializeComponent();
+            _rfidSystemDbContext = new(_connectionString);
+            _studentsRepository = new(_rfidSystemDbContext);
+            _rfidPort = new();
+            _reader = new(_rfidPort);
+            _rfidPort.DataReceived += new SerialDataReceivedEventHandler(Recieve);
+        }
+
+        private void Recieve(object sender, SerialDataReceivedEventArgs e)
+        {
+            var tag = _reader.GetRfidTag();
+            Dispatcher.Invoke(new Action(() => RfidTag.Content = tag));
+            _studentsRepository.UpdateAttendance(tag);
         }
 
         private void StudentsList_Loaded(object sender, RoutedEventArgs e)
         {
-            _rfidSystemDbContext = new(_connectionString);
-            _studentsRepository = new(_rfidSystemDbContext);
             var list = _studentsRepository.GetEntriesDb().ToList();
             StudentsList.ItemsSource = list;
         }
 
         private void ButtonUpdatePorts_Click(object sender, RoutedEventArgs e)
         {
-            _rfidPort = new();
-            _reader = new(_rfidPort);
             var ports = _reader.GetPortsArray();
             PortsList.Items.Clear();
             if (ports != null)
@@ -67,32 +75,24 @@ namespace ASClient
             {
                 try
                 {
-                    _reader.OpenSerialPort();
+                    _rfidPort.PortName = PortsList.Text;
+                    _rfidPort.Open();
                     PortsList.IsEnabled = false;
                     ButtonUpdatePorts.IsEnabled = false;
                     ButtonConnectPort.Content = "Отключиться";
-                    //ScanTheLabel();
                 }
                 catch
                 {
                     MessageBox.Show("Ошибка подключения");
                 }
             }
-
             else if (ButtonConnectPort.Content.ToString() == "Отключиться")
             {
-                _reader.CloseSerialPort();
+                _rfidPort.Close();
                 ButtonUpdatePorts.IsEnabled = true;
                 PortsList.IsEnabled = true;
                 ButtonConnectPort.Content = "Подключиться";
             }
-        }
-
-        private void ScanTheLabel()
-        {
-            var tag = _reader.GetRfidTag();
-            RfidTag.Content = tag;
-            _studentsRepository.UpdateAttendance(tag);
         }
     }
 }
