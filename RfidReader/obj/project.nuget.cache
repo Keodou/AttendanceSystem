@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bEDjrOY6nBHzrRUN9zVPfIMIbXMnPJnXLFCfjyRUdzFAY0LUrXyWXtiDREP35xYG6jxcA0rI7uwDLMDhzTFAxw==",
+  "dgSpecHash": "Gd6dn2y/qf+kQCWnO9uu+BaExLO+VlCm9UMM+IQ1b+bWwwxX2SkrYFCbaxYtsIiUWp0L2hZIFjZUPKS+AcgYbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\RfidReader.csproj",
+  "projectFilePath": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dmitry\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
     "C:\\Users\\Dmitry\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "udRZO2GEOQqPU9YsCNyMEdBIP2XXOE8Mzh0KBF+NkEIjgrngfHn8wyU35Z2Cu5qCMVJrtQfBQnWegxldlezuHg==",
+  "dgSpecHash": "640AMl4lx3gzmUKDlUSA9Ligw8sPdtWO+ADude2m3blzjvFu72+VRlCwWY/aCokCwGjUbPD05gDRp5Ryr0shcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\ASClient\\ASClient.csproj",
+  "projectFilePath": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\ASClient\\ASClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dmitry\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Dmitry\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\RfidReader.csproj": {}
+    "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\RfidReader.csproj": {
+    "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\RfidReader.csproj",
+        "projectUniqueName": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
         "projectName": "RfidReader",
-        "projectPath": "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\RfidReader.csproj",
+        "projectPath": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
         "packagesPath": "C:\\Users\\Dmitry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dmitry\\source\\repos\\RFIDSystem\\RfidReader\\obj\\",
+        "outputPath": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

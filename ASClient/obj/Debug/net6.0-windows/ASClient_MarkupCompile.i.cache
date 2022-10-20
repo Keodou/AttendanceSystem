@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Dmitry\source\repos\RFIDSystem\ASClient\obj\Debug\net6.0-windows\
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\
 ASClient
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Dmitry\source\repos\RFIDSystem\ASClient\App.xaml
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\App.xaml
 11407045341
 
 5-543107863
-21744078827
+2171723315711
 MainWindow.xaml;
 
-False
+True
 

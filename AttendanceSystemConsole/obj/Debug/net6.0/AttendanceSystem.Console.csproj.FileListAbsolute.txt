@@ -1,0 +1,5 @@
+C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\obj\Debug\net6.0\AttendanceSystem.Console.csproj.AssemblyReference.cache
+C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\obj\Debug\net6.0\AttendanceSystem.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\obj\Debug\net6.0\AttendanceSystem.Console.AssemblyInfoInputs.cache
+C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\obj\Debug\net6.0\AttendanceSystem.Console.AssemblyInfo.cs
+C:\Users\Dmitry\source\repos\RFIDSystem\RFIDSystem\obj\Debug\net6.0\AttendanceSystem.Console.csproj.CoreCompileInputs.cache
