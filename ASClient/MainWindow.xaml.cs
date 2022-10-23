@@ -1,24 +1,10 @@
 ﻿using DAL;
 using DAL.Data;
-using DAL.Entities;
-using DAL.Interfaces;
 using RfidReader;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO.Ports;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ASClient
 {
@@ -58,7 +44,7 @@ namespace ASClient
 
         private void ButtonUpdatePorts_Click(object sender, RoutedEventArgs e)
         {
-            var ports = _reader.GetPortsArray();
+            var ports = _reader.GetPortsArray;
             PortsList.Items.Clear();
             if (ports != null)
             {
