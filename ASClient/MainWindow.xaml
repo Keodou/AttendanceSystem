@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASClient"
         mc:Ignorable="d"
-        Title="Attendance System Utility" Height="450" Width="800">
+        Title="Attendance System Utility" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl TabStripPlacement="Left">
             <TabItem Header="Считыватель">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="RFID ID" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="42"/>
-                    <Label x:Name="RfidTag" Content=" AA AA AA AA " HorizontalAlignment="Center" Margin="0,76,0,0" VerticalAlignment="Top" FontSize="46" FontWeight="Bold"/>
-                    <Label Content="Подуключение к порту" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" FontSize="18"/>
-                    <Button x:Name="ButtonConnectPort" Content="Подключиться" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,191,0,0" Click="ButtonConnectPort_Click"/>
-                    <Label Content="Выбор порта" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" FontSize="18"/>
-                    <ComboBox x:Name="PortsList" HorizontalAlignment="Center" Margin="0,307,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="ButtonUpdatePorts" Content="Обновить" HorizontalAlignment="Center" Margin="0,343,0,0" VerticalAlignment="Top" FontSize="26" Click="ButtonUpdatePorts_Click"/>
+                    <Label Content="СЧИТЫВАТЕЛЬ" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold"/>
+                    <Label Content="RFID ID" HorizontalAlignment="Left" Margin="38,78,0,0" VerticalAlignment="Top" FontSize="26"/>
+                    <Label x:Name="RfidTag" Content=" AA AA AA AA " HorizontalAlignment="Left" Margin="161,78,0,0" VerticalAlignment="Top" FontSize="26"/>
+                    <Button x:Name="ButtonConnectPort" Content="Подключиться" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" Margin="120,350,0,0" Click="ButtonConnectPort_Click"/>
+                    <Label Content="Выбор порта" HorizontalAlignment="Left" Margin="38,123,0,0" VerticalAlignment="Top" FontSize="18"/>
+                    <ComboBox x:Name="PortsList" HorizontalAlignment="Left" Margin="175,131,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="ButtonUpdatePorts" Content="Обновить" HorizontalAlignment="Center" Margin="-130,350,0,0" VerticalAlignment="Top" FontSize="16" Click="ButtonUpdatePorts_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Список студентов">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="StudentsList" AutoGenerateColumns="False" Loaded="StudentsList_Loaded">
+                    <DataGrid x:Name="StudentsList" Margin="0,40,0,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" Width="10"/>
                             <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="100"/>
@@ -30,6 +30,7 @@
                             <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="100"/>
                         </DataGrid.Columns>
                     </DataGrid>
+                    <Button x:Name="AddStudent" Content="Добавить студента" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -26,7 +26,7 @@ namespace ASClient
             _studentsRepository = new(_rfidSystemDbContext);
             _rfidPort = new();
             _reader = new(_rfidPort);
-            _rfidPort.DataReceived += new SerialDataReceivedEventHandler(Recieve);
+            _rfidPort.DataReceived += new(Recieve);
         }
 
         private void Recieve(object sender, SerialDataReceivedEventArgs e)
@@ -38,7 +38,7 @@ namespace ASClient
 
         private void StudentsList_Loaded(object sender, RoutedEventArgs e)
         {
-            var list = _studentsRepository.GetEntriesDb().ToList();
+            var list = _studentsRepository.GetEntries().ToList();
             StudentsList.ItemsSource = list;
         }
 

@@ -66,7 +66,7 @@ namespace AttendanceSystemConsole
         // TODO: Сделать операции с БД асинхронными
         private void OutputStudents()
         {
-            var students = _studentsRepository.GetEntriesDb();
+            var students = _studentsRepository.GetEntries();
             foreach (var student in students)
             {
                 Console.WriteLine($"Name: {student.Name}\nAttendance: {student.Attendance}" +

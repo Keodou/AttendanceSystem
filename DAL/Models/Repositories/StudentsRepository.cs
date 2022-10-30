@@ -13,18 +13,6 @@ namespace DAL
             _dbContext = dbContext;
         }
 
-        public void AddStudentsDb()
-        {
-            _dbContext.Students.Add(new Student()
-            {
-                Name = "Каминский Алексей",
-                RfidTag = " 99 62 36 BB ",
-                Attendance = "Отсутствует",
-                AttendanceTime = "00.00.00"
-            });
-            _dbContext.SaveChanges();
-        }
-
         public void UpdateAttendance(string tag)
         {
             var student = _dbContext.Students
@@ -44,9 +32,14 @@ namespace DAL
             _dbContext.SaveChanges();
         }
 
-        public IQueryable<Student> GetEntriesDb()
+        public IQueryable<Student> GetEntries()
         {
             return _dbContext.Students.OrderBy(s => s.Name);
         }
+
+        /*public Student GetEntriesById(int number)
+        {
+            return _dbContext.Students.Single(x => x.Id == number);
+        }*/
     }
 }
