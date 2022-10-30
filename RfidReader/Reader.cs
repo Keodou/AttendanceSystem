@@ -2,18 +2,25 @@
 
 namespace RfidReader
 {
-    public class Reader
+    public class Reader : SerialPort
     {
         private SerialPort _rfidReader;
+
+        public Reader()
+        {
+            _rfidReader = new SerialPort
+            {
+                BaudRate = 9600
+            };
+        }
 
         public Reader(SerialPort rfidReader)
         {
             rfidReader.BaudRate = 9600;
             _rfidReader = rfidReader;
-            //ports = SerialPort.GetPortNames();
         }
 
-        public string[] GetPortsArray => SerialPort.GetPortNames();
+        public string[] GetPortsArray => GetPortNames();
 
         public void OpenSerialPort()
         {

@@ -1,15 +1,12 @@
 ﻿using DAL;
-using System.IO.Ports;
 using DAL.Data;
 using RfidReader;
 using AttendanceSystemConsole;
 
 // Initial objects
-string connectionString = @"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;";
-RFIDSystemDbContext dbContext = new(connectionString);
-SerialPort rfid = new();
+RFIDSystemDbContext dbContext = new();
 StudentsRepository studentRepository = new(dbContext);
-Reader reader = new(rfid);
+Reader reader = new();
 ConsoleManager systemManager = new(reader, studentRepository);
 
 systemManager.InputVariable();

@@ -13,7 +13,6 @@ namespace ASClient
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly string _connectionString = @"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;";
         private RFIDSystemDbContext _rfidSystemDbContext;
         private StudentsRepository _studentsRepository;
         private Reader _reader;
@@ -22,7 +21,7 @@ namespace ASClient
         public MainWindow()
         {
             InitializeComponent();
-            _rfidSystemDbContext = new(_connectionString);
+            _rfidSystemDbContext = new();
             _studentsRepository = new(_rfidSystemDbContext);
             _rfidPort = new();
             _reader = new(_rfidPort);
