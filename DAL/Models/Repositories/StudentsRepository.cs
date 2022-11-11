@@ -34,7 +34,7 @@ namespace DAL
 
         public IQueryable<Student> GetEntries()
         {
-            return _dbContext.Students.OrderBy(s => s.Name);
+            return _dbContext.Students.OrderBy(s => s.Id);
         }
 
         /*public Student GetEntriesById(int number)
