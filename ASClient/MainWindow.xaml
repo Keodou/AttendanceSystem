@@ -5,14 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASClient"
         mc:Ignorable="d"
-        Title="Attendance System Utility" Height="450" Width="800" 
+        Title="Attendance System Utility" Height="720" Width="1000"
+        MinHeight="350" MinWidth="650"
         WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="415"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="StudentsList" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" Grid.Row="0">
+
+        <!--Students Table-->
+        <DataGrid x:Name="StudentsList" Margin="8" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" Width="10"/>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="100"/>
@@ -21,6 +28,8 @@
                 <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
+
+        <!--Reader Options-->
         <Label x:Name="RfidTag" 
                Content=" AA AA AA AA " 
                HorizontalAlignment="Left" Margin="33,14,0,0" VerticalAlignment="Top" 
@@ -28,20 +37,20 @@
                Grid.Row="1"/>
         <Button x:Name="ButtonConnectPort" 
                 Content="Подключиться" 
-                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" VerticalAlignment="Top" 
                 FontSize="16" 
-                Margin="659,14,0,0" 
+                Margin="0,14,14,0" 
                 Click="ButtonConnectPort_Click" 
                 Height="35"
-                Grid.Row="1"/>
+                Grid.Row="1" Grid.Column="1"/>
         <Button x:Name="ButtonUpdatePorts" Content="Обновить" 
-                HorizontalAlignment="Left" Margin="524,14,0,0" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" Margin="0,14,144,0" VerticalAlignment="Top" 
                 FontSize="16" Click="ButtonUpdatePorts_Click" 
                 Height="35" Width="111"
-                Grid.Row="1"/>
+                Grid.Row="1" Grid.Column="1"/>
         <ComboBox x:Name="PortsList" 
-                  HorizontalAlignment="Left" Margin="370,14,0,0" VerticalAlignment="Top" 
+                  HorizontalAlignment="Right" Margin="0,15,280,0" VerticalAlignment="Top" 
                   Width="120" Height="35"
-                  Grid.Row="1"/>
+                  Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Window>
