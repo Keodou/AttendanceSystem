@@ -15,42 +15,45 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <!--Students Table-->
-        <DataGrid x:Name="StudentsList" Margin="8" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <DataGrid x:Name="StudentsList" Margin="8,8,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
+                  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
+                  GridLinesVisibility="None" CanUserResizeColumns="False"
+                  BorderBrush="Black">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" Width="10"/>
-                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Path=RfidTag}" Header="RFID метка" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" Width="auto"/>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=RfidTag}" Header="RFID метка" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
         <!--Reader Options-->
-        <Label x:Name="RfidTag" 
-               Content=" AA AA AA AA " 
-               HorizontalAlignment="Left" Margin="33,14,0,0" VerticalAlignment="Top" 
-               FontSize="22" Height="35"
-               Grid.Row="1"/>
+        <TextBlock x:Name="RfidTag" 
+               Text=" AA AA AA AA " Foreground="Red"
+               HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
+               FontSize="16" FontWeight="Bold"
+               Height="25" Grid.Row="1"/>
         <Button x:Name="ButtonConnectPort" 
                 Content="Подключиться" 
-                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16" 
-                Margin="0,14,14,0" 
+                Margin="294,0,0,0" 
                 Click="ButtonConnectPort_Click" 
-                Height="35"
+                Height="25"
                 Grid.Row="1" Grid.Column="1"/>
         <Button x:Name="ButtonUpdatePorts" Content="Обновить" 
-                HorizontalAlignment="Right" Margin="0,14,144,0" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Margin="169,0,0,0" VerticalAlignment="Center" 
                 FontSize="16" Click="ButtonUpdatePorts_Click" 
-                Height="35" Width="111"
+                Height="25" Width="111"
                 Grid.Row="1" Grid.Column="1"/>
         <ComboBox x:Name="PortsList" 
-                  HorizontalAlignment="Right" Margin="0,15,280,0" VerticalAlignment="Top" 
-                  Width="120" Height="35"
+                  HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" 
+                  Width="120" Height="25"
                   Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Window>

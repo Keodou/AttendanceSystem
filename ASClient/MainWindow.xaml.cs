@@ -2,6 +2,7 @@
 using DAL.Data;
 using RfidReader;
 using System;
+using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Windows;
@@ -31,7 +32,7 @@ namespace ASClient
         private void Recieve(object sender, SerialDataReceivedEventArgs e)
         {
             var tag = _reader.GetRfidTag();
-            Dispatcher.Invoke(new Action(() => RfidTag.Content = tag));
+            Dispatcher.Invoke(new Action(() => RfidTag.Text = tag));
             _studentsRepository.UpdateAttendance(tag);
         }
 
@@ -60,6 +61,7 @@ namespace ASClient
             {
                 try
                 {
+                    RfidTag.Text = "";
                     _rfidPort.PortName = PortsList.Text;
                     _rfidPort.Open();
                     PortsList.IsEnabled = false;
@@ -68,7 +70,7 @@ namespace ASClient
                 }
                 catch
                 {
-                    MessageBox.Show("Ошибка подключения");
+                    RfidTag.Text = "ОШИБКА! Не инициализирован COM-порт устройства.";
                 }
             }
             else if (ButtonConnectPort.Content.ToString() == "Отключиться")
