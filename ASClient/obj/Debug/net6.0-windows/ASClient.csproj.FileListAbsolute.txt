@@ -124,3 +124,4 @@ C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.pdb
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.genruntimeconfig.cache
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ref\ASClient.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\App.baml

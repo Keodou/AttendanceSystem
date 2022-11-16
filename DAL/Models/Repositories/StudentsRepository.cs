@@ -13,22 +13,29 @@ namespace DAL
             _dbContext = dbContext;
         }
 
-        public void UpdateAttendance(string tag)
+        public Student? GetEntry(string tag)
         {
-            var student = _dbContext.Students
+            return _dbContext.Students
                 .Where(l => l.RfidTag == tag)
                 .FirstOrDefault();
-            if (student != null)
+            /*if (student != null)
             {
                 student.Attendance = "Присутствует";
                 student.AttendanceTime = DateTime.Now.ToString();
             }
-            _dbContext.SaveChanges();
+            _dbContext.SaveChanges();*/
         }
 
-        public void SaveChanges(Student student)
+        public void SaveChanges(Student entry)
         {
-            _dbContext.Add(student);
+            if (entry.Id == default)
+            {
+                _dbContext.Add(entry);
+            }
+            else
+            {
+                _dbContext.Update(entry);
+            }
             _dbContext.SaveChanges();
         }
 

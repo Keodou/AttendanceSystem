@@ -22,7 +22,7 @@
         <DataGrid x:Name="StudentsList" Margin="8,8,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
-                  BorderBrush="Black">
+                  BorderBrush="Blue">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" Width="auto"/>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="*"/>
@@ -45,7 +45,8 @@
                 Margin="294,0,0,0" 
                 Click="ButtonConnectPort_Click" 
                 Height="25"
-                Grid.Row="1" Grid.Column="1"/>
+                Grid.Row="1" Grid.Column="1"
+                Focusable="False"/>
         <Button x:Name="ButtonUpdatePorts" Content="Обновить" 
                 HorizontalAlignment="Left" Margin="169,0,0,0" VerticalAlignment="Center" 
                 FontSize="16" Click="ButtonUpdatePorts_Click" 

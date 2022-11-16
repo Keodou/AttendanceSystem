@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Data;
+using DAL.Entities;
 using RfidReader;
 using System;
 using System.Drawing;
@@ -33,7 +34,18 @@ namespace ASClient
         {
             var tag = _reader.GetRfidTag();
             Dispatcher.Invoke(new Action(() => RfidTag.Text = tag));
-            _studentsRepository.UpdateAttendance(tag);
+            var student = _studentsRepository.GetEntry(tag);
+            UpdateAttendance(student);
+        }
+
+        private void UpdateAttendance(Student student)
+        {
+            if (student is not null)
+            {
+                student.Attendance = "Присутствует";
+                student.AttendanceTime = DateTime.Now.ToString();
+            }
+            _studentsRepository.SaveChanges(student);
         }
 
         private void StudentsList_Loaded(object sender, RoutedEventArgs e)

@@ -7,7 +7,7 @@ namespace DAL.Interfaces
         IQueryable<Student> GetEntries();
         // Student AddEntry();
         //int GetEntriesById(int number);
-        void UpdateAttendance(string tag);
+        Student? GetEntry(string tag);
         void SaveChanges(Student student);
     }
 }

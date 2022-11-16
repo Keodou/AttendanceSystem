@@ -1,5 +1,6 @@
 ﻿using DAL.Entities;
 using DAL.Interfaces;
+using Microsoft.Extensions.Configuration;
 using RfidReader;
 
 namespace AttendanceSystemConsole
@@ -59,7 +60,13 @@ namespace AttendanceSystemConsole
             {
                 var tag = _reader.GetRfidTag(_tag);
                 Console.WriteLine(tag);
-                _studentsRepository.UpdateAttendance(tag);
+                var student = _studentsRepository.GetEntry(tag);
+                if (student is not null)
+                {
+                    student.Attendance = "Присутствует";
+                    student.AttendanceTime = DateTime.Now.ToString();
+                }
+                _studentsRepository.SaveChanges(student);
             }
         }
 
