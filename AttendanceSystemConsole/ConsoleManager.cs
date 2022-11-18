@@ -60,7 +60,7 @@ namespace AttendanceSystemConsole
             {
                 var tag = _reader.GetRfidTag(_tag);
                 Console.WriteLine(tag);
-                var student = _studentsRepository.GetEntry(tag);
+                var student = _studentsRepository.GetEntryByTag(tag);
                 if (student is not null)
                 {
                     student.Attendance = "Присутствует";

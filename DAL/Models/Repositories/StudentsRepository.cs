@@ -13,7 +13,12 @@ namespace DAL
             _dbContext = dbContext;
         }
 
-        public Student? GetEntry(string tag)
+        public IQueryable<Student> GetEntries()
+        {
+            return _dbContext.Students.OrderBy(s => s.Id);
+        }
+
+        public Student? GetEntryByTag(string tag)
         {
             return _dbContext.Students
                 .Where(l => l.RfidTag == tag)
@@ -26,7 +31,7 @@ namespace DAL
             _dbContext.SaveChanges();*/
         }
 
-        public void SaveChanges(Student entry)
+        public void SaveChanges(Student? entry)
         {
             if (entry.Id == default)
             {
@@ -39,14 +44,10 @@ namespace DAL
             _dbContext.SaveChanges();
         }
 
-        public IQueryable<Student> GetEntries()
+        public void Delete(Student? entry)
         {
-            return _dbContext.Students.OrderBy(s => s.Id);
+            _dbContext.Students.Remove(entry);
+            _dbContext.SaveChanges();
         }
-
-        /*public Student GetEntriesById(int number)
-        {
-            return _dbContext.Students.Single(x => x.Id == number);
-        }*/
     }
 }

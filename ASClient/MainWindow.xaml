@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <!--CRUD operations-->
-        <Button Content="+ Добавить" 
+        <Button x:Name="CreateStudent" Content="+ Добавить" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16"
                 Margin="10,0,0,0"
@@ -32,12 +32,12 @@
                 Margin="146,0,0,0"
                 Width="120"
                 Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Button Content="Удалить" 
+        <Button x:Name="DeleteStudent" Content="Удалить" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16"
                 Margin="285,0,0,0" BorderBrush="Red"
                 Width="120" 
-                Grid.Column="0" Grid.ColumnSpan="2"/>
+                Grid.Column="0" Grid.ColumnSpan="2" Click="DeleteStudent_Click"/>
 
         <!--Students Table-->
         <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"

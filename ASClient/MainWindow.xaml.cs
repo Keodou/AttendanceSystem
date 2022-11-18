@@ -3,6 +3,7 @@ using DAL.Data;
 using DAL.Entities;
 using RfidReader;
 using System;
+using System.CodeDom;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -34,11 +35,12 @@ namespace ASClient
         {
             var tag = _reader.GetRfidTag();
             Dispatcher.Invoke(new Action(() => RfidTag.Text = tag));
-            var student = _studentsRepository.GetEntry(tag);
+            var student = _studentsRepository.GetEntryByTag(tag);
             UpdateAttendance(student);
+            UpdateStudentsList();
         }
 
-        private void UpdateAttendance(Student student)
+        private void UpdateAttendance(Student? student)
         {
             if (student is not null)
             {
@@ -50,8 +52,7 @@ namespace ASClient
 
         private void StudentsList_Loaded(object sender, RoutedEventArgs e)
         {
-            var list = _studentsRepository.GetEntries().ToList();
-            StudentsList.ItemsSource = list;
+            UpdateStudentsList();
         }
 
         private void ButtonUpdatePorts_Click(object sender, RoutedEventArgs e)
@@ -92,6 +93,29 @@ namespace ASClient
                 PortsList.IsEnabled = true;
                 ButtonConnectPort.Content = "Подключиться";
             }
+        }
+
+        private void DeleteStudent_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var student = StudentsList.SelectedItem as Student;
+                _studentsRepository.Delete(student);
+            }
+            catch (ArgumentNullException)
+            {
+                RfidTag.Text = "ОШИБКА! Выберите обьект для удаления";
+            }
+            finally
+            {
+                UpdateStudentsList();
+            }
+        }
+
+        private void UpdateStudentsList()
+        {
+            var list = _studentsRepository.GetEntries().ToList();
+            StudentsList.ItemsSource = list;
         }
     }
 }
