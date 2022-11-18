@@ -8,19 +8,40 @@
         Title="Attendance System Utility" Height="720" Width="1000"
         MinHeight="350" MinWidth="650"
         WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
-    <Grid>
+    <Grid ShowGridLines="False" Background="#e0e6ea">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="415"/>
+            <ColumnDefinition Width="440"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
+        <!--CRUD operations-->
+        <Button Content="+ Добавить" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                FontSize="16"
+                Margin="10,0,0,0"
+                Width="120"
+                Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button Content="Редактировать" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                FontSize="16"
+                Margin="146,0,0,0"
+                Width="120"
+                Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button Content="Удалить" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                FontSize="16"
+                Margin="285,0,0,0" BorderBrush="Red"
+                Width="120" 
+                Grid.Column="0" Grid.ColumnSpan="2"/>
+
         <!--Students Table-->
-        <DataGrid x:Name="StudentsList" Margin="8,8,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
-                  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
+        <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
+                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Blue">
             <DataGrid.Columns>
@@ -37,24 +58,24 @@
                Text=" AA AA AA AA " Foreground="Red"
                HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
                FontSize="16" FontWeight="Bold"
-               Height="25" Grid.Row="1"/>
+               Height="25" Grid.Row="2"/>
         <Button x:Name="ButtonConnectPort" 
                 Content="Подключиться" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16" 
-                Margin="294,0,0,0" 
+                Margin="310,0,0,0" 
                 Click="ButtonConnectPort_Click" 
-                Height="25"
-                Grid.Row="1" Grid.Column="1"
+                Width="120"
+                Grid.Row="2" Grid.Column="1"
                 Focusable="False"/>
         <Button x:Name="ButtonUpdatePorts" Content="Обновить" 
-                HorizontalAlignment="Left" Margin="169,0,0,0" VerticalAlignment="Center" 
+                HorizontalAlignment="Left" Margin="173,0,0,0" VerticalAlignment="Center" 
                 FontSize="16" Click="ButtonUpdatePorts_Click" 
-                Height="25" Width="111"
-                Grid.Row="1" Grid.Column="1"/>
+                Width="120"
+                Grid.Row="2" Grid.Column="1"/>
         <ComboBox x:Name="PortsList" 
-                  HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" 
+                  HorizontalAlignment="Left" Margin="33,0,0,0" VerticalAlignment="Center" 
                   Width="120" Height="25"
-                  Grid.Row="1" Grid.Column="1"/>
+                  Grid.Row="2" Grid.Column="1"/>
     </Grid>
 </Window>

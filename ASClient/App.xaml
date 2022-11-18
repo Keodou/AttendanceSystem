@@ -5,11 +5,12 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#ffff"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="BorderBrush" Value="Blue"/>
+            <Setter Property="Height" Value="26"/>
         </Style>
         <Style TargetType="ComboBox">
-            <Setter Property="Background" Value="#ffff"/>
+            <Setter Property="Background" Value="Blue"/>
             <Setter Property="BorderBrush" Value="Blue"/>
         </Style>
     </Application.Resources>
