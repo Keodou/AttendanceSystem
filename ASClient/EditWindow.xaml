@@ -1,0 +1,63 @@
+﻿<Window x:Class="ASClient.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASClient"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="400" Width="400"
+        WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid ShowGridLines="False" Background="#e0e6ea">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="240"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Header-->
+        <TextBlock Text="Обновить модель студента" 
+                   Grid.Column="1"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="18" FontWeight="Bold"/>
+
+        <!--Update model-->
+        <TextBlock Text="Имя студента" HorizontalAlignment="Left"
+                   Grid.Column="1" Margin="48,6,0,215" Grid.Row="1" FontSize="16"/>
+        <TextBox Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,32,0,0" 
+                 TextWrapping="Wrap" Width="132"/>
+        <TextBlock Text="Метка" 
+                   Grid.Column="1" Margin="49,63,141,157" Grid.Row="1" FontSize="16"/>
+        <TextBox Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,89,60,0" 
+                 TextWrapping="Wrap" Width="132"/>
+        <TextBlock Text="Посещаемость" 
+                   Grid.Column="1" Margin="49,120,80,101" Grid.Row="1" FontSize="16"/>
+        <TextBox Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,146,59,0" 
+                 TextWrapping="Wrap" Width="132"/>
+        <TextBlock Text="Время прихода" 
+                   Grid.Column="1" Margin="49,177,73,41" Grid.Row="1" FontSize="16"/>
+        <TextBox Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,204,60,0" 
+                 TextWrapping="Wrap" Width="132"/>
+
+        <!--Buttons-->
+        <Button Content="Сохранить" 
+                HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
+                FontSize="16"
+                Width="100"
+                Grid.Row="2" Grid.Column="1"/>
+        <Button Content="Отмена" 
+                HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Center" 
+                FontSize="16"
+                Width="100"
+                Grid.Row="2" Grid.Column="1"
+                BorderBrush="Red"/>
+    </Grid>
+</Window>

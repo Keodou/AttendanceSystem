@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ASClient"
         mc:Ignorable="d"
         Title="Attendance System Utility" Height="720" Width="1000"
         MinHeight="350" MinWidth="650"
@@ -20,12 +19,12 @@
         </Grid.RowDefinitions>
 
         <!--CRUD operations-->
-        <Button x:Name="CreateStudent" Content="+ Добавить" 
+        <Button x:Name="UpdateStudent" Content="+ Добавить" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16"
                 Margin="10,0,0,0"
                 Width="120"
-                Grid.Column="0" Grid.ColumnSpan="2"/>
+                Grid.Column="0" Grid.ColumnSpan="2" Click="UpdateStudent_Click"/>
         <Button Content="Редактировать" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16"

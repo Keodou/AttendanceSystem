@@ -108,11 +108,9 @@ C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\DAL.pdb
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\RfidReader.pdb
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.csproj.AssemblyReference.cache
-C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient_MarkupCompile.cache
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient_MarkupCompile.lref
-C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.g.resources
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.AssemblyInfoInputs.cache
@@ -125,3 +123,7 @@ C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.genruntimeconfig.cache
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ref\ASClient.dll
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\App.baml
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\EditWindow.g.cs
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\EditWindow.baml

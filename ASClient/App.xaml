@@ -9,6 +9,11 @@
             <Setter Property="BorderBrush" Value="Blue"/>
             <Setter Property="Height" Value="26"/>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Blue"/>
+            <Setter Property="Height" Value="26"/>
+        </Style>
         <Style TargetType="ComboBox">
             <Setter Property="Background" Value="Blue"/>
             <Setter Property="BorderBrush" Value="Blue"/>

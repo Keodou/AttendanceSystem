@@ -117,5 +117,11 @@ namespace ASClient
             var list = _studentsRepository.GetEntries().ToList();
             StudentsList.ItemsSource = list;
         }
+
+        private void UpdateStudent_Click(object sender, RoutedEventArgs e)
+        {
+            EditWindow editWindow = new();
+            editWindow.ShowDialog();
+        }
     }
 }
