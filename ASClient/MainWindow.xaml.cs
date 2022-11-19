@@ -120,7 +120,7 @@ namespace ASClient
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
         {
-            EditWindow editWindow = new();
+            EditWindow editWindow = new(_studentsRepository);
             editWindow.ShowDialog();
         }
     }

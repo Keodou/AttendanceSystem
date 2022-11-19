@@ -23,12 +23,6 @@ namespace DAL
             return _dbContext.Students
                 .Where(l => l.RfidTag == tag)
                 .FirstOrDefault();
-            /*if (student != null)
-            {
-                student.Attendance = "Присутствует";
-                student.AttendanceTime = DateTime.Now.ToString();
-            }
-            _dbContext.SaveChanges();*/
         }
 
         public void SaveChanges(Student? entry)

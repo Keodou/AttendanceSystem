@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:ASClient"
         mc:Ignorable="d"
         Title="EditWindow" Height="400" Width="400"
-        WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        MinHeight="400" MinWidth="400"
+        MaxHeight="400" MaxWidth="400"
+        WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid ShowGridLines="False" Background="#e0e6ea">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -27,37 +29,41 @@
 
         <!--Update model-->
         <TextBlock Text="Имя студента" HorizontalAlignment="Left"
-                   Grid.Column="1" Margin="48,6,0,215" Grid.Row="1" FontSize="16"/>
-        <TextBox Grid.Column="1" Grid.Row="1" 
-                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,32,0,0" 
-                 TextWrapping="Wrap" Width="132"/>
+                   Grid.Column="1" Margin="12,6,0,215" Grid.Row="1" FontSize="16"/>
+        <TextBox x:Name="studentName" Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,32,0,0" 
+                 TextWrapping="Wrap" FontSize="15" 
+                 Width="220"/>
         <TextBlock Text="Метка" 
-                   Grid.Column="1" Margin="49,63,141,157" Grid.Row="1" FontSize="16"/>
-        <TextBox Grid.Column="1" Grid.Row="1" 
-                 HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,89,60,0" 
-                 TextWrapping="Wrap" Width="132"/>
+                   Grid.Column="1" Margin="12,63,178,157" Grid.Row="1" FontSize="16"/>
+        <TextBox x:Name="rfidTag" Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,89,0,0" 
+                 TextWrapping="Wrap" FontSize="15" 
+                 Width="218"/>
         <TextBlock Text="Посещаемость" 
-                   Grid.Column="1" Margin="49,120,80,101" Grid.Row="1" FontSize="16"/>
-        <TextBox Grid.Column="1" Grid.Row="1" 
-                 HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,146,59,0" 
-                 TextWrapping="Wrap" Width="132"/>
+                   Grid.Column="1" Margin="12,120,117,101" Grid.Row="1" FontSize="16"/>
+        <TextBox x:Name="attendance" Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,146,0,0" 
+                 TextWrapping="Wrap" FontSize="15" 
+                 Width="217"/>
         <TextBlock Text="Время прихода" 
-                   Grid.Column="1" Margin="49,177,73,41" Grid.Row="1" FontSize="16"/>
-        <TextBox Grid.Column="1" Grid.Row="1" 
-                 HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,204,60,0" 
-                 TextWrapping="Wrap" Width="132"/>
+                   Grid.Column="1" Margin="12,177,110,41" Grid.Row="1" FontSize="15"/>
+        <TextBox x:Name="attendanceTime" Grid.Column="1" Grid.Row="1" 
+                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,204,0,0" 
+                 TextWrapping="Wrap" FontSize="15" 
+                 Width="216"/>
 
         <!--Buttons-->
-        <Button Content="Сохранить" 
+        <Button x:Name="ButtonSave" Content="Сохранить" 
                 HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
                 FontSize="16"
                 Width="100"
-                Grid.Row="2" Grid.Column="1"/>
-        <Button Content="Отмена" 
+                Grid.Row="2" Grid.Column="1" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonClose" Content="Отмена" 
                 HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Center" 
                 FontSize="16"
                 Width="100"
                 Grid.Row="2" Grid.Column="1"
-                BorderBrush="Red"/>
+                BorderBrush="Red" Click="ButtonClose_Click"/>
     </Grid>
 </Window>
