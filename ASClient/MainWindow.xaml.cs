@@ -122,6 +122,7 @@ namespace ASClient
         {
             EditWindow editWindow = new(_studentsRepository);
             editWindow.ShowDialog();
+            if (!editWindow.IsActive) UpdateStudentsList();
         }
     }
 }

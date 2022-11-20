@@ -43,11 +43,8 @@ namespace ASClient
                 Attendance = attendance.Text,
                 AttendanceTime = attendanceTime.Text,
             };
-
             if (student.Name == "" || student.RfidTag == "") 
-            {
                 MessageBox.Show("ОШИБКА! Поля не заполнены");
-            }
             else
             {
                 _studentsRepository.SaveChanges(student);
