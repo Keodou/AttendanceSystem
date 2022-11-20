@@ -120,9 +120,23 @@ namespace ASClient
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
         {
+            Student student = null;
             EditWindow editWindow = new(_studentsRepository);
             editWindow.ShowDialog();
             if (!editWindow.IsActive) UpdateStudentsList();
+        }
+
+        private void EditStudent_Click(object sender, RoutedEventArgs e)
+        {
+            var student = StudentsList.SelectedItem as Student;
+            if (student != null)
+            {
+                EditWindow editWindow = new(_studentsRepository, student);
+                editWindow.ShowDialog();
+                if (!editWindow.IsActive) UpdateStudentsList();
+            }
+            else
+                RfidTag.Text = "ОШИБКА! Выберите обьект для изменения";
         }
     }
 }

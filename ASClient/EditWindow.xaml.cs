@@ -2,6 +2,7 @@
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,26 @@ namespace ASClient
     public partial class EditWindow : Window
     {
         private readonly StudentsRepository _studentsRepository;
+        private Student? _student;
+        private readonly int _studentId;
 
         public EditWindow(StudentsRepository studentsRepository)
         {
             InitializeComponent();
             _studentsRepository = studentsRepository;
+        }
+
+        public EditWindow(StudentsRepository studentsRepository, Student student)
+        {
+            InitializeComponent();
+            _studentsRepository = studentsRepository;
+            _student = student;
+            _studentId = _student.Id;
+
+            studentName.Text = _student.Name;
+            rfidTag.Text = _student.RfidTag;
+            attendance.Text = _student.Attendance;
+            attendanceTime.Text = _student.AttendanceTime;
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
@@ -43,6 +59,12 @@ namespace ASClient
                 Attendance = attendance.Text,
                 AttendanceTime = attendanceTime.Text,
             };
+
+            if (_student is not null)
+            {
+                student.Id = _studentId;
+            }
+
             if (student.Name == "" || student.RfidTag == "") 
                 MessageBox.Show("ОШИБКА! Поля не заполнены");
             else

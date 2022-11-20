@@ -25,12 +25,12 @@
                 Margin="10,0,0,0"
                 Width="120"
                 Grid.Column="0" Grid.ColumnSpan="2" Click="UpdateStudent_Click"/>
-        <Button Content="Редактировать" 
+        <Button x:Name="EditStudent" Content="Редактировать" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16"
                 Margin="146,0,0,0"
                 Width="120"
-                Grid.Column="0" Grid.ColumnSpan="2"/>
+                Grid.Column="0" Grid.ColumnSpan="2" Click="EditStudent_Click"/>
         <Button x:Name="DeleteStudent" Content="Удалить" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16"

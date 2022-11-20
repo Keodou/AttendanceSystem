@@ -8,10 +8,11 @@
         Title="EditWindow" Height="400" Width="400"
         MinHeight="400" MinWidth="400"
         MaxHeight="400" MaxWidth="400"
-        WindowStyle="None" WindowStartupLocation="CenterScreen">
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid ShowGridLines="False" Background="#e0e6ea">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="90"/>
             <RowDefinition Height="240"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>

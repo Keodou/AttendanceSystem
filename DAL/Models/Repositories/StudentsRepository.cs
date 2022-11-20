@@ -10,6 +10,8 @@ namespace DAL
 
         public StudentsRepository(RFIDSystemDbContext dbContext)
         {
+            dbContext.ChangeTracker.QueryTrackingBehavior = Microsoft.EntityFrameworkCore
+                .QueryTrackingBehavior.NoTracking;
             _dbContext = dbContext;
         }
 
@@ -25,7 +27,7 @@ namespace DAL
                 .FirstOrDefault();
         }
 
-        public void SaveChanges(Student? entry)
+        public int SaveChanges(Student? entry)
         {
             if (entry.Id == default)
             {
@@ -36,6 +38,8 @@ namespace DAL
                 _dbContext.Update(entry);
             }
             _dbContext.SaveChanges();
+
+            return entry.Id;
         }
 
         public void Delete(Student? entry)
