@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using DAL;
+using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.Extensions.Configuration;
 using RfidReader;

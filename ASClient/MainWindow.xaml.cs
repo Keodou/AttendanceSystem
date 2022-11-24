@@ -1,6 +1,7 @@
 ﻿using DAL;
 using DAL.Data;
 using DAL.Entities;
+using DAL.Interfaces;
 using RfidReader;
 using System;
 using System.CodeDom;
@@ -21,11 +22,11 @@ namespace ASClient
         private Reader _reader;
         private SerialPort _rfidPort;
 
-        public MainWindow()
+        public MainWindow(RFIDSystemDbContext dbContext, StudentsRepository studentsRepository)
         {
             InitializeComponent();
-            _rfidSystemDbContext = new();
-            _studentsRepository = new(_rfidSystemDbContext);
+            _rfidSystemDbContext = dbContext;
+            _studentsRepository = studentsRepository;// new(_rfidSystemDbContext);
             _rfidPort = new();
             _reader = new(_rfidPort);
             _rfidPort.DataReceived += new(Recieve);
@@ -120,7 +121,6 @@ namespace ASClient
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
         {
-            Student student = null;
             EditWindow editWindow = new(_studentsRepository);
             editWindow.ShowDialog();
             if (!editWindow.IsActive) UpdateStudentsList();

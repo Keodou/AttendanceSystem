@@ -5,12 +5,12 @@ namespace DAL.Data
 {
     public class RFIDSystemDbContext : DbContext
     {
-        public RFIDSystemDbContext()
+        public DbSet<Student> Students { get; set; }
+
+        public RFIDSystemDbContext(DbContextOptions<RFIDSystemDbContext> options) : base(options)
         {
 
         }
-
-        public DbSet<Student> Students { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
