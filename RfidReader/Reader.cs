@@ -22,16 +22,6 @@ namespace RfidReader
 
         public string[] GetPortsArray => GetPortNames();
 
-        public void OpenSerialPort()
-        {
-            _rfidReader.Open();
-        }
-
-        public void CloseSerialPort()
-        {
-            _rfidReader.Close();
-        }
-
         public string SelectPort()
         {
             var ports = GetPortsArray;

@@ -68,3 +68,7 @@ C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\obj\Releas
 C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\obj\Release\net6.0\AttendanceSystemConsole.pdb
 C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\obj\Release\net6.0\AttendanceSystemConsole.genruntimeconfig.cache
 C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\obj\Release\net6.0\ref\AttendanceSystemConsole.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\bin\Release\net6.0\AttendanceSystemConsole.dll.manifest
+C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\bin\Release\net6.0\AttendanceSystemConsole.application
+C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\obj\Release\net6.0\AttendanceSystemConsole.dll.manifest
+C:\Users\Dmitry\source\repos\AttendanceSystem\AttendanceSystemConsole\obj\Release\net6.0\AttendanceSystemConsole.application

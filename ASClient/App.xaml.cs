@@ -18,7 +18,7 @@ namespace ASClient
     /// </summary>
     public partial class App : Application
     {
-        private readonly ServiceProvider serviceProvider;
+        private readonly ServiceProvider _serviceProvider;
 
         public App()
         {
@@ -28,15 +28,14 @@ namespace ASClient
                     options.UseSqlServer(@"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;");
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
-                //.AddScoped<RFIDSystemDbContext>()
                 .AddScoped<StudentsRepository>()
                 .AddSingleton<MainWindow>();
-            serviceProvider = services.BuildServiceProvider();
+            _serviceProvider = services.BuildServiceProvider();
         }
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
+            var mainWindow = _serviceProvider.GetService<MainWindow>();
             mainWindow.Show();
         }
     }

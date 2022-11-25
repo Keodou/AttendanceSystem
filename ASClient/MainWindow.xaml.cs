@@ -116,7 +116,7 @@ namespace ASClient
         private void UpdateStudentsList()
         {
             var list = _studentsRepository.GetEntries().ToList();
-            StudentsList.ItemsSource = list;
+            Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
         }
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
