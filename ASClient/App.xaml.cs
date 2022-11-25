@@ -24,10 +24,13 @@ namespace ASClient
         {
             var services = new ServiceCollection()
                 .AddDbContext<RFIDSystemDbContext>(options =>
-                options.UseSqlServer(@"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;"))
-                .AddTransient<StudentsRepository, StudentsRepository>()
+                {
+                    options.UseSqlServer(@"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;");
+                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                })
+                //.AddScoped<RFIDSystemDbContext>()
+                .AddScoped<StudentsRepository>()
                 .AddSingleton<MainWindow>();
-                //.AddScoped<IEntriesRepository, StudentsRepository>();
             serviceProvider = services.BuildServiceProvider();
         }
 

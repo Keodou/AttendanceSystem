@@ -67,7 +67,7 @@ namespace AttendanceSystemConsole
                     student.Attendance = "Присутствует";
                     student.AttendanceTime = DateTime.Now.ToString();
                 }
-                _studentsRepository.SaveChanges(student);
+                _studentsRepository.Save(student);
             }
         }
 
@@ -92,7 +92,7 @@ namespace AttendanceSystemConsole
                 Attendance = Console.ReadLine(),
                 AttendanceTime = Console.ReadLine()
             };
-            _studentsRepository.SaveChanges(student);
+            _studentsRepository.Save(student);
         }
     }
 }

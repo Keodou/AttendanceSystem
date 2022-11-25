@@ -6,7 +6,7 @@ namespace DAL.Interfaces
     {
         IQueryable<Student> GetEntries();
         Student? GetEntryByTag(string tag);
-        int SaveChanges(Student student);
+        void Save(Student student);
         void Delete(Student? entry);
     }
 }

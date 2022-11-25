@@ -24,7 +24,7 @@ namespace ASClient
     {
         private readonly StudentsRepository _studentsRepository;
         private Student? _student;
-        private readonly int _studentId;
+        private int _studentId;
 
         public EditWindow(StudentsRepository studentsRepository)
         {
@@ -54,22 +54,19 @@ namespace ASClient
         {
             Student student = new()
             {
+                Id = _studentId,
                 Name = studentName.Text,
                 RfidTag = rfidTag.Text,
                 Attendance = attendance.Text,
                 AttendanceTime = attendanceTime.Text,
             };
 
-            if (_student is not null)
-            {
-                student.Id = _studentId;
-            }
-
             if (student.Name == "" || student.RfidTag == "") 
                 MessageBox.Show("ОШИБКА! Поля не заполнены");
             else
             {
-                _studentsRepository.SaveChanges(student);
+                _studentsRepository.Save(student);
+                _studentId = default;
                 Close();
             }
         }
