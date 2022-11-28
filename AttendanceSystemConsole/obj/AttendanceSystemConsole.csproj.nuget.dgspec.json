@@ -65,6 +65,18 @@
               "target": "Package",
               "version": "[6.0.9, )"
             },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "System.IO.Ports": {
               "target": "Package",
               "version": "[6.0.0, )"

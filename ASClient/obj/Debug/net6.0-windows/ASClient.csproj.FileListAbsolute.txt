@@ -128,3 +128,13 @@ C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\EditWindow.g.cs
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\EditWindow.baml
 C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient_Content.g.cs
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\bin\Debug\net6.0-windows\appsettings.json

@@ -1,14 +1,9 @@
 ﻿using DAL;
 using DAL.Data;
-using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
 
 namespace ASClient
@@ -19,13 +14,21 @@ namespace ASClient
     public partial class App : Application
     {
         private readonly ServiceProvider _serviceProvider;
+        private IConfiguration _configuration;
+        private readonly string _connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=RFIDSystem;Trusted_Connection=True;";
 
         public App()
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            _configuration = builder.Build();
+            var connectionString = _configuration.GetConnectionString("ServerConnection");
             var services = new ServiceCollection()
                 .AddDbContext<RFIDSystemDbContext>(options =>
                 {
-                    options.UseSqlServer(@"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;");
+                    options.UseSqlServer(connectionString);
+                    //options.UseSqlServer(_connectionString);
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
                 .AddScoped<StudentsRepository>()
