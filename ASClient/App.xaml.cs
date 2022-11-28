@@ -3,6 +3,7 @@ using DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.IO;
 using System.Windows;
 
@@ -27,7 +28,11 @@ namespace ASClient
             var services = new ServiceCollection()
                 .AddDbContext<RFIDSystemDbContext>(options =>
                 {
-                    options.UseSqlServer(connectionString);
+                    options.UseSqlServer(connectionString, builder =>
+                    {
+                        builder.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(5), 
+                            errorNumbersToAdd: null);
+                    });
                     //options.UseSqlServer(_connectionString);
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
