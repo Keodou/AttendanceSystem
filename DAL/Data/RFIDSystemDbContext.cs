@@ -10,7 +10,7 @@ namespace DAL.Data
 
         public RFIDSystemDbContext(DbContextOptions<RFIDSystemDbContext> options) : base(options)
         {
-
+            //Database.EnsureCreated();
         }
 
         public RFIDSystemDbContext() 
@@ -20,7 +20,7 @@ namespace DAL.Data
 
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DMITRYPC;Database=RFIDSystem;Trusted_Connecя искалtion=True;");
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }*/
     }

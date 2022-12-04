@@ -47,8 +47,8 @@ namespace ASClient
             {
                 student.Attendance = "Присутствует";
                 student.AttendanceTime = DateTime.Now.ToString();
+                _studentsRepository.Save(student);
             }
-            _studentsRepository.Save(student);
         }
 
         private void StudentsList_Loaded(object sender, RoutedEventArgs e)

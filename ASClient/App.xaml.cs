@@ -16,7 +16,6 @@ namespace ASClient
     {
         private readonly ServiceProvider _serviceProvider;
         private IConfiguration _configuration;
-        private readonly string _connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=RFIDSystem;Trusted_Connection=True;";
 
         public App()
         {
@@ -33,7 +32,6 @@ namespace ASClient
                         builder.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(5), 
                             errorNumbersToAdd: null);
                     });
-                    //options.UseSqlServer(_connectionString);
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
                 .AddScoped<StudentsRepository>()
