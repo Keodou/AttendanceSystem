@@ -5,10 +5,12 @@ using DAL.Interfaces;
 using RfidReader;
 using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace ASClient
@@ -116,9 +118,18 @@ namespace ASClient
 
         private void UpdateStudentsList()
         {
-            //int groupNumber = GroupsList.SelectedIndex;
-            var list = _studentsRepository.GetEntries().ToList();
-            Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            var groupNumber = GroupsList.SelectedItem as string;
+            //Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            if (groupNumber is null)
+            {
+                var list = _studentsRepository.GetEntries().ToList();
+                Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            }
+            else
+            {
+                var list = _studentsRepository.GetEntries(groupNumber).ToList();
+                Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            }
         }
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
@@ -148,6 +159,14 @@ namespace ASClient
             {
                 GroupsList.Items.Add(group.GroupNumber);
             }
+        }
+
+        private void GroupsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            //var groupNumber = GroupsList.SelectedItem as string;
+            //var list = _studentsRepository.GetEntries(groupNumber).ToList();
+            //Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            UpdateStudentsList();
         }
     }
 }
