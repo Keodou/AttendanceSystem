@@ -40,6 +40,7 @@ namespace ASClient
             _studentId = _student.Id;
 
             studentName.Text = _student.Name;
+            groupNumber.Text = _student.GroupNumber;
             rfidTag.Text = _student.RfidTag;
             attendance.Text = _student.Attendance;
             attendanceTime.Text = _student.AttendanceTime;
@@ -56,12 +57,13 @@ namespace ASClient
             {
                 Id = _studentId,
                 Name = studentName.Text,
+                GroupNumber = groupNumber.Text,
                 RfidTag = rfidTag.Text,
                 Attendance = attendance.Text,
                 AttendanceTime = attendanceTime.Text,
             };
 
-            if (student.Name == "" || student.RfidTag == "") 
+            if (student.Name == "" || student.RfidTag == "" || student.GroupNumber == "") 
                 MessageBox.Show("ОШИБКА! Поля не заполнены");
             else
             {

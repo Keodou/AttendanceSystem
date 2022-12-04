@@ -6,6 +6,8 @@
 
         public string Name { get; set; }
 
+        public string GroupNumber { get; set; }
+
         public string RfidTag { get; set; }
 
         public string Attendance { get; set; }

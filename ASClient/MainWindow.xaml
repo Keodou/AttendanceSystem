@@ -38,14 +38,18 @@
                 Width="120" 
                 Grid.Column="0" Grid.ColumnSpan="2" Click="DeleteStudent_Click"/>
 
+        <ComboBox x:Name="GroupsList" 
+                  HorizontalAlignment="Left" VerticalAlignment="Center" 
+                  Width="120" Height="26" Margin="424,0,0,0"/>
+
         <!--Students Table-->
         <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Blue">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" Width="auto"/>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=GroupNumber}" Header="Группа" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=RfidTag}" Header="RFID метка" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="*"/>
