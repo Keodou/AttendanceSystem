@@ -18,7 +18,12 @@ namespace DAL
 
         public IQueryable<Student> GetEntries()
         {
-            return _dbContext.Students.OrderBy(s => s.Id);
+            return _dbContext.Students.OrderBy(s => s.Name);
+        }
+
+        public IQueryable<Student> GetEntries(string groupNumber)
+        {
+            return _dbContext.Students.Where(g => g.GroupNumber == groupNumber).OrderBy(s => s.Name);
         }
 
         public Student? GetEntryByTag(string tag)

@@ -40,7 +40,7 @@
 
         <ComboBox x:Name="GroupsList" 
                   HorizontalAlignment="Left" VerticalAlignment="Center" 
-                  Width="120" Height="26" Margin="424,0,0,0"/>
+                  Width="120" Height="26" Margin="424,0,0,0" Loaded="GroupsList_Loaded"/>
 
         <!--Students Table-->
         <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"

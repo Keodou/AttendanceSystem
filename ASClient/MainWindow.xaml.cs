@@ -9,6 +9,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Windows;
+using System.Windows.Media;
 
 namespace ASClient
 {
@@ -115,6 +116,7 @@ namespace ASClient
 
         private void UpdateStudentsList()
         {
+            //int groupNumber = GroupsList.SelectedIndex;
             var list = _studentsRepository.GetEntries().ToList();
             Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
         }
@@ -137,6 +139,15 @@ namespace ASClient
             }
             else
                 RfidTag.Text = "ОШИБКА! Выберите обьект для изменения";
+        }
+
+        private void GroupsList_Loaded(object sender, RoutedEventArgs e)
+        {
+            var groups = _studentsRepository.GetEntries().ToList();
+            foreach (var group in groups)
+            {
+                GroupsList.Items.Add(group.GroupNumber);
+            }
         }
     }
 }
