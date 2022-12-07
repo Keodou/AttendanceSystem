@@ -11,8 +11,6 @@ namespace DAL
 
         public StudentsRepository(RFIDSystemDbContext dbContext)
         {
-            /*dbContext.ChangeTracker.QueryTrackingBehavior = Microsoft.EntityFrameworkCore
-                .QueryTrackingBehavior.NoTracking;*/
             _dbContext = dbContext;
         }
 

@@ -44,7 +44,7 @@ namespace ASClient
             UpdateStudentsList();
         }
 
-        private void UpdateAttendance(Student? student)
+        private void UpdateAttendance(Student student)
         {
             if (student is not null)
             {
@@ -118,18 +118,16 @@ namespace ASClient
 
         private void UpdateStudentsList()
         {
-            var groupNumber = GroupsList.SelectedItem as string;
-            //Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
-            if (groupNumber is null)
+            string? groupNumber = "";
+            Dispatcher.Invoke(new Action(() => { groupNumber = GroupsList.SelectedItem as string; }));
+            /*if (groupNumber is null)
             {
                 var list = _studentsRepository.GetEntries().ToList();
                 Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
-            }
-            else
-            {
-                var list = _studentsRepository.GetEntries(groupNumber).ToList();
-                Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
-            }
+            }*/
+
+            var list = _studentsRepository.GetEntries(groupNumber).ToList();
+            Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
         }
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
