@@ -152,7 +152,7 @@ namespace ASClient
 
         private void GroupsList_Loaded(object sender, RoutedEventArgs e)
         {
-            var groups = _studentsRepository.GetEntries().ToList();
+            var groups = _studentsRepository.GetEntries().ToList().DistinctBy(g => g.GroupNumber);
             foreach (var group in groups)
             {
                 GroupsList.Items.Add(group.GroupNumber);
