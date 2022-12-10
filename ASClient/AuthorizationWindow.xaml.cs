@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL.Models.Repositories;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,14 @@ namespace ASClient
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        public AuthorizationWindow()
+        private readonly UsersRepository _usersRepository;
+        private readonly MainWindow _mainWindow;
+
+        public AuthorizationWindow(UsersRepository usersRepository, MainWindow mainWindow)
         {
             InitializeComponent();
+            _usersRepository = usersRepository;
+            _mainWindow = mainWindow;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -31,7 +38,19 @@ namespace ASClient
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Login.Text == "" && Password.Password == "")
+            {
+                Error.Text = "Вы не заполнили поля";
+            }
+            if (_usersRepository.GetStudents().Select(item => item.Login + " " + item.Password).Contains(Login.Text + " " + Password.Password))
+            {
+                _mainWindow.Show();
+                Close();
+            }
+            else
+            {
+                Error.Text = "Данные некооректны";
+            }
         }
     }
 }

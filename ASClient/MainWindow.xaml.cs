@@ -20,16 +20,14 @@ namespace ASClient
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RFIDSystemDbContext _rfidSystemDbContext;
         private StudentsRepository _studentsRepository;
         private Reader _reader;
         private SerialPort _rfidPort;
 
-        public MainWindow(RFIDSystemDbContext dbContext, StudentsRepository studentsRepository)
+        public MainWindow(StudentsRepository studentsRepository)
         {
             InitializeComponent();
-            _rfidSystemDbContext = dbContext;
-            _studentsRepository = studentsRepository;// new(_rfidSystemDbContext);
+            _studentsRepository = studentsRepository;
             _rfidPort = new();
             _reader = new(_rfidPort);
             _rfidPort.DataReceived += new(Recieve);

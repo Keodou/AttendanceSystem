@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Data;
+using DAL.Models.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,34 +15,36 @@ namespace ASClient
     /// </summary>
     public partial class App : Application
     {
-        private readonly ServiceProvider _serviceProvider;
-        private IConfiguration _configuration;
+        public ServiceProvider ServiceProvider { get; set; }
+        public IConfiguration Configuration { get; set; }
 
         public App()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            _configuration = builder.Build();
-            var connectionString = _configuration.GetConnectionString("ServerConnection");
+            Configuration = builder.Build();
+            var connectionString = Configuration.GetConnectionString("ServerConnection");
             var services = new ServiceCollection()
                 .AddDbContext<RFIDSystemDbContext>(options =>
                 {
                     options.UseSqlServer(connectionString, builder =>
                     {
-                        builder.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(5), 
+                        builder.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(5),
                             errorNumbersToAdd: null);
                     });
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
+                .AddScoped<UsersRepository>()
                 .AddScoped<StudentsRepository>()
-                .AddTransient<AuthorizationWindow>();
-            _serviceProvider = services.BuildServiceProvider();
+                .AddTransient<AuthorizationWindow>()
+                .AddSingleton<MainWindow>();
+            ServiceProvider = services.BuildServiceProvider();
         }
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            var authorizationWindow = _serviceProvider.GetService<AuthorizationWindow>();
+            var authorizationWindow = ServiceProvider.GetService<AuthorizationWindow>();
             authorizationWindow.Show();
         }
     }

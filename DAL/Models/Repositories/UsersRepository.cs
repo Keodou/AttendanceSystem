@@ -1,9 +1,5 @@
 ﻿using DAL.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DAL.Models.Entities;
 
 namespace DAL.Models.Repositories
 {
@@ -14,6 +10,11 @@ namespace DAL.Models.Repositories
         public UsersRepository(RFIDSystemDbContext dbContext)
         {
             _dbConext = dbContext;
+        }
+
+        public IQueryable<User> GetStudents()
+        {
+            return _dbConext.Users.OrderBy(u => u.Id);
         }
     }
 }
