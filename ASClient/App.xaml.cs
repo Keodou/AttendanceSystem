@@ -35,14 +35,14 @@ namespace ASClient
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
                 .AddScoped<StudentsRepository>()
-                .AddSingleton<MainWindow>();
+                .AddTransient<AuthorizationWindow>();
             _serviceProvider = services.BuildServiceProvider();
         }
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            var mainWindow = _serviceProvider.GetService<MainWindow>();
-            mainWindow.Show();
+            var authorizationWindow = _serviceProvider.GetService<AuthorizationWindow>();
+            authorizationWindow.Show();
         }
     }
 }

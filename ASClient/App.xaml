@@ -18,5 +18,8 @@
             <Setter Property="Background" Value="Blue"/>
             <Setter Property="BorderBrush" Value="Blue"/>
         </Style>
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="#e0e6ea"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -1,4 +1,5 @@
 ﻿using DAL.Entities;
+using DAL.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -7,6 +8,7 @@ namespace DAL.Data
     public class RFIDSystemDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public RFIDSystemDbContext(DbContextOptions<RFIDSystemDbContext> options) : base(options)
         {
