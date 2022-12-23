@@ -1,4 +1,6 @@
-﻿namespace DAL.Entities
+﻿using DAL.Models.Entities;
+
+namespace DAL.Entities
 {
     public class Student
     {
@@ -13,5 +15,7 @@
         public string Attendance { get; set; }
 
         public string AttendanceTime { get; set; }
+
+        public List<AttendanceRecord> AttendanceRecords { get; set; }
     }
 }

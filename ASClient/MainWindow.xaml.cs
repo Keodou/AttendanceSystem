@@ -2,6 +2,8 @@
 using DAL.Data;
 using DAL.Entities;
 using DAL.Interfaces;
+using DAL.Models.Entities;
+using DAL.Models.Repositories;
 using RfidReader;
 using System;
 using System.CodeDom;
@@ -21,13 +23,15 @@ namespace ASClient
     public partial class MainWindow : Window
     {
         private StudentsRepository _studentsRepository;
+        private AttendanceRecordsRepository _recordsRepository;
         private Reader _reader;
         private SerialPort _rfidPort;
 
-        public MainWindow(StudentsRepository studentsRepository)
+        public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository)
         {
             InitializeComponent();
             _studentsRepository = studentsRepository;
+            _recordsRepository = recordsRepository;
             _rfidPort = new();
             _reader = new(_rfidPort);
             _rfidPort.DataReceived += new(Recieve);
@@ -49,6 +53,14 @@ namespace ASClient
                 student.Attendance = "Присутствует";
                 student.AttendanceTime = DateTime.Now.ToString();
                 _studentsRepository.Save(student);
+
+                var attendanceRecord = new AttendanceRecord()
+                {
+                    Attendance = student.Attendance,
+                    AttendanceTime = student.AttendanceTime,
+                    StudentId = student.Id
+                };
+                _recordsRepository.Save(attendanceRecord);
             }
         }
 

@@ -37,6 +37,7 @@ namespace ASClient
                 })
                 .AddScoped<UsersRepository>()
                 .AddScoped<StudentsRepository>()
+                .AddScoped<AttendanceRecordsRepository>()
                 .AddTransient<AuthorizationWindow>()
                 .AddSingleton<MainWindow>();
             ServiceProvider = services.BuildServiceProvider();
