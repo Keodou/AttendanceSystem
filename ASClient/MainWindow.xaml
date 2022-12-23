@@ -46,7 +46,7 @@
         <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
-                  BorderBrush="Blue">
+                  BorderBrush="Blue" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=GroupNumber}" Header="Группа" Width="*"/>

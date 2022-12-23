@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AuthorizationWindow" Height="360" Width="400" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize">
-    <Grid>
+    <Grid Background="#e0e6ea">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="180"/>
