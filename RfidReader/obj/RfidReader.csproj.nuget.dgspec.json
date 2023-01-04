@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {}
+    "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
+    "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
+        "projectUniqueName": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
         "projectName": "RfidReader",
-        "projectPath": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
-        "packagesPath": "C:\\Users\\Dmitry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dmitry\\source\\repos\\AttendanceSystem\\RfidReader\\obj\\",
+        "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
+        "packagesPath": "C:\\Users\\korob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dmitry\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\korob\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

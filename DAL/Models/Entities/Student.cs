@@ -8,7 +8,7 @@ namespace DAL.Entities
 
         public string Name { get; set; }
 
-        public string GroupNumber { get; set; }
+        public string? GroupNumber { get; set; }
 
         public string RfidTag { get; set; }
 

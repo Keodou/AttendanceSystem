@@ -25,22 +25,10 @@
                 Margin="10,0,0,0"
                 Width="120"
                 Grid.Column="0" Grid.ColumnSpan="2" Click="UpdateStudent_Click"/>
-        <Button x:Name="EditStudent" Content="Редактировать" 
-                HorizontalAlignment="Left" VerticalAlignment="Center" 
-                FontSize="16"
-                Margin="146,0,0,0"
-                Width="120"
-                Grid.Column="0" Grid.ColumnSpan="2" Click="EditStudent_Click"/>
-        <Button x:Name="DeleteStudent" Content="Удалить" 
-                HorizontalAlignment="Left" VerticalAlignment="Center" 
-                FontSize="16"
-                Margin="285,0,0,0" BorderBrush="Red"
-                Width="120" 
-                Grid.Column="0" Grid.ColumnSpan="2" Click="DeleteStudent_Click"/>
 
         <ComboBox x:Name="GroupsList" 
                   HorizontalAlignment="Left" VerticalAlignment="Center" 
-                  Width="120" Height="26" Margin="424,0,0,0" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged"/>
+                  Width="120" Height="26" Margin="160,0,0,0" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged"/>
 
         <!--Students Table-->
         <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
@@ -48,11 +36,25 @@
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Blue" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="220"/>
                 <DataGridTextColumn Binding="{Binding Path=GroupNumber}" Header="Группа" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=RfidTag}" Header="RFID метка" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="*"/>
+                <DataGridTemplateColumn Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="EditStudent" Content="Р" Click="EditStudent_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="DeleteStudent" Content="У" BorderBrush="Red" Click="DeleteStudent_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -42,7 +42,7 @@ namespace ASClient
             {
                 Error.Text = "Вы не заполнили поля";
             }
-            if (_usersRepository.GetStudents().Select(item => item.Login + " " + item.Password).Contains(Login.Text + " " + Password.Password))
+            if (_usersRepository.GetUsers().Select(item => item.Login + " " + item.Password).Contains(Login.Text + " " + Password.Password))
             {
                 _mainWindow.Show();
                 Close();

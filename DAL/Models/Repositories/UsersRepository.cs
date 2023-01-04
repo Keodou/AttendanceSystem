@@ -5,16 +5,16 @@ namespace DAL.Models.Repositories
 {
     public class UsersRepository
     {
-        private readonly RFIDSystemDbContext _dbConext;
+        private readonly RFIDSystemDbContext _dbContext;
 
         public UsersRepository(RFIDSystemDbContext dbContext)
         {
-            _dbConext = dbContext;
+            _dbContext = dbContext;
         }
 
-        public IQueryable<User> GetStudents()
+        public IQueryable<User> GetUsers()
         {
-            return _dbConext.Users.OrderBy(u => u.Id);
+            return _dbContext.Users;
         }
     }
 }
