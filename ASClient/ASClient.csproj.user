@@ -9,21 +9,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AuthorizationWindow.xaml.cs">
+    <Compile Update="Views\AuthorizationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EditWindow.xaml.cs">
+    <Compile Update="Views\EditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AuthorizationWindow.xaml">
+    <Page Update="Views\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EditWindow.xaml">
+    <Page Update="Views\EditWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

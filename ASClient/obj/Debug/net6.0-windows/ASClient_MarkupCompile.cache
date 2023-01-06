@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\korob\source\repos\AttendanceSystem\ASClient\App.xaml
-3-313160067
+3-1389179916
 296349885
-5-1848174391
+6-1359598058
 223-2142591957
-AuthorizationWindow.xaml;EditWindow.xaml;MainWindow.xaml;
+Views\AuthorizationWindow.xaml;Views\EditWindow.xaml;Views\MainWindow.xaml;
 
 False
 
