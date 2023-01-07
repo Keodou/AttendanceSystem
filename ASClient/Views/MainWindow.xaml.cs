@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using ASClient.Views;
+using DAL;
 using DAL.Data;
 using DAL.Entities;
 using DAL.Interfaces;
@@ -175,6 +176,19 @@ namespace ASClient
             //var list = _studentsRepository.GetEntries(groupNumber).ToList();
             //Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
             UpdateStudentsList();
+        }
+
+        private void StudentsList_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var student = StudentsList.SelectedItem as Student;
+            if (student != null)
+            {
+                student = _studentsRepository.GetEntryByAttendanceRecords(student.Id).FirstOrDefault();
+                var detailsWindow = new DetailsWindow(student, _studentsRepository);
+                detailsWindow.ShowDialog();
+            }
+            else
+                RfidTag.Text = "ОШИБКА! Выберите студента для просмотра его истории посещаемости";
         }
     }
 }

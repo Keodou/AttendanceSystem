@@ -1,6 +1,7 @@
 ﻿using DAL.Data;
 using DAL.Entities;
 using DAL.Interfaces;
+using DAL.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL
@@ -29,6 +30,11 @@ namespace DAL
             return _dbContext.Students
                 .Where(l => l.RfidTag == tag)
                 .FirstOrDefault();
+        }
+
+        public List<Student> GetEntryByAttendanceRecords(int id)
+        {
+            return _dbContext.Students.Where(s => s.Id == id).Include(a => a.AttendanceRecords).ToList();
         }
 
         public void Save(Student? entry)

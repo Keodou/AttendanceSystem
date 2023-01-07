@@ -221,3 +221,5 @@ C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\V
 C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\Views\EditWindow.baml
 C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.Resources.resources
 C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.csproj.GenerateResource.cache
+C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\Views\DetailsWindow.g.cs
+C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\Views\DetailsWindow.baml
