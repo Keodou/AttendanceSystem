@@ -1,20 +1,13 @@
 ﻿using ASClient.Views;
 using DAL;
-using DAL.Data;
 using DAL.Entities;
-using DAL.Interfaces;
 using DAL.Models.Entities;
 using DAL.Models.Repositories;
 using RfidReader;
 using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Media;
 
 namespace ASClient
 {
@@ -25,14 +18,16 @@ namespace ASClient
     {
         private StudentsRepository _studentsRepository;
         private AttendanceRecordsRepository _recordsRepository;
+        private GroupsRepository _groupsRepository;
         private Reader _reader;
         private SerialPort _rfidPort;
 
-        public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository)
+        public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository, GroupsRepository groupsRepository)
         {
             InitializeComponent();
             _studentsRepository = studentsRepository;
             _recordsRepository = recordsRepository;
+            _groupsRepository = groupsRepository;
             _rfidPort = new();
             _reader = new(_rfidPort);
             _rfidPort.DataReceived += new(Recieve);
@@ -129,16 +124,18 @@ namespace ASClient
 
         private void UpdateStudentsList()
         {
-            string? groupNumber = "";
-            Dispatcher.Invoke(new Action(() => { groupNumber = GroupsList.SelectedItem as string; }));
-            /*if (groupNumber is null)
-            {
-                var list = _studentsRepository.GetEntries().ToList();
-                Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
-            }*/
+            //string? groupNumber = "";
+            //Dispatcher.Invoke(new Action(() => { groupNumber = GroupsList.SelectedItem as string; }));
+            ///*if (groupNumber is null)
+            //{
+            //    var list = _studentsRepository.GetEntries().ToList();
+            //    Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            //}*/
 
-            var list = _studentsRepository.GetEntries(groupNumber).ToList();
-            Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            //var list = _studentsRepository.GetEntries(groupNumber).ToList();
+            //Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
+            StudentsList.ItemsSource = _studentsRepository.GetEntries(GroupsList.SelectedItem as Group).ToList();
+            //StudentsList.ItemsSource = _studentsRepository.GetEntries().ToList();
         }
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
@@ -163,11 +160,13 @@ namespace ASClient
 
         private void GroupsList_Loaded(object sender, RoutedEventArgs e)
         {
-            var groups = _studentsRepository.GetEntries().AsEnumerable().DistinctBy(g => g.GroupNumber).ToList();
-            foreach (var group in groups)
-            {
-                GroupsList.Items.Add(group.GroupNumber);
-            }
+            GroupsList.ItemsSource = _groupsRepository.GetGroups().ToList();
+                
+            //    .GetEntries().AsEnumerable().DistinctBy(g => g.GroupNumber).ToList();
+            //foreach (var group in groups)
+            //{
+            //    GroupsList.Items.Add(group.GroupNumber);
+            //}
         }
 
         private void GroupsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

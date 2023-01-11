@@ -7,13 +7,14 @@ namespace DAL.Data
 {
     public class RFIDSystemDbContext : DbContext
     {
+        public DbSet<Group> Groups { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<AttendanceRecord> AttendanceRecords { get; set; }
 
         public RFIDSystemDbContext(DbContextOptions<RFIDSystemDbContext> options) : base(options)
         {
-            //Database.EnsureCreated();
+
         }
 
         public RFIDSystemDbContext() 

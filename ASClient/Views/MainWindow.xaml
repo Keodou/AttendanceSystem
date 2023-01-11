@@ -26,7 +26,7 @@
                 Width="120"
                 Grid.Column="0" Grid.ColumnSpan="2" Click="UpdateStudent_Click"/>
 
-        <ComboBox x:Name="GroupsList" 
+        <ComboBox x:Name="GroupsList" DisplayMemberPath="Number"
                   HorizontalAlignment="Left" VerticalAlignment="Center" 
                   Width="120" Height="26" Margin="160,0,0,0" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged"/>
 
@@ -36,11 +36,11 @@
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Blue" Background="White" MouseDoubleClick="StudentsList_MouseDoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя" Width="220"/>
-                <DataGridTextColumn Binding="{Binding Path=GroupNumber}" Header="Группа" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Path=RfidTag}" Header="RFID метка" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Время прихода" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="220"/>
+                <DataGridTextColumn Binding="{Binding Group.Number}" Header="Группа" Width="*"/>
+                <DataGridTextColumn Binding="{Binding RfidTag}" Header="RFID метка" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Attendance}" Header="Посещаемость" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AttendanceTime}" Header="Время прихода" Width="*"/>
                 <DataGridTemplateColumn Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

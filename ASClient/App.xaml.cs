@@ -36,6 +36,7 @@ namespace ASClient
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
                 .AddScoped<UsersRepository>()
+                .AddScoped<GroupsRepository>()
                 .AddScoped<StudentsRepository>()
                 .AddScoped<AttendanceRecordsRepository>()
                 .AddTransient<AuthorizationWindow>()
