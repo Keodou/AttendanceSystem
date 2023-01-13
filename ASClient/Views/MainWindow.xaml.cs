@@ -133,8 +133,9 @@ namespace ASClient
             //}*/
 
             //var list = _studentsRepository.GetEntries(groupNumber).ToList();
-            //Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
-            StudentsList.ItemsSource = _studentsRepository.GetEntries(GroupsList.SelectedItem as Group).ToList();
+            Dispatcher.Invoke(new Action(() => 
+            { StudentsList.ItemsSource = _studentsRepository.GetEntries(GroupsList.SelectedItem as Group).ToList(); }));
+            //StudentsList.ItemsSource = _studentsRepository.GetEntries(GroupsList.SelectedItem as Group).ToList();
             //StudentsList.ItemsSource = _studentsRepository.GetEntries().ToList();
         }
 
