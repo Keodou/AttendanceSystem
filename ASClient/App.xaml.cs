@@ -33,7 +33,7 @@ namespace ASClient
                         builder.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(5),
                             errorNumbersToAdd: null);
                     });
-                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                    //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 })
                 .AddScoped<UsersRepository>()
                 .AddScoped<GroupsRepository>()

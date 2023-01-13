@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Entities;
+using DAL.Models.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -23,16 +24,26 @@ namespace ASClient
     public partial class EditWindow : Window
     {
         private readonly StudentsRepository _studentsRepository;
-        private Student? _student;
-        private int _studentId;
+        private Student? _student = new();
+        // private int _studentId;
 
-        public EditWindow(StudentsRepository studentsRepository)
+        public EditWindow(StudentsRepository studentsRepository, GroupsRepository groupsRepository, Student student)
+        {
+            InitializeComponent();
+            if (student != null)
+                _student = student;
+            DataContext = _student;
+            _studentsRepository = studentsRepository;
+            groupNumber.ItemsSource = groupsRepository.GetGroups().ToList();
+        }
+
+        /*public EditWindow(StudentsRepository studentsRepository)
         {
             InitializeComponent();
             _studentsRepository = studentsRepository;
-        }
+        }*/
 
-        public EditWindow(StudentsRepository studentsRepository, Student student)
+        /*public EditWindow(StudentsRepository studentsRepository, Student student)
         {
             InitializeComponent();
             _studentsRepository = studentsRepository;
@@ -44,7 +55,7 @@ namespace ASClient
             rfidTag.Text = _student.RfidTag;
             attendance.Text = _student.Attendance;
             attendanceTime.Text = _student.AttendanceTime;
-        }
+        }*/
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
@@ -53,24 +64,33 @@ namespace ASClient
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            Student student = new()
-            {
-                Id = _studentId,
-                Name = studentName.Text,
-                GroupNumber = groupNumber.Text,
-                RfidTag = rfidTag.Text,
-                Attendance = attendance.Text,
-                AttendanceTime = attendanceTime.Text,
-            };
+            //Student student = new()
+            //{
+            //    Id = _studentId,
+            //    Name = studentName.Text,
+            //    GroupNumber = groupNumber.Text,
+            //    RfidTag = rfidTag.Text,
+            //    Attendance = attendance.Text,
+            //    AttendanceTime = attendanceTime.Text,
+            //};
 
-            if (student.Name == "" || student.RfidTag == "" || student.GroupNumber == "") 
+            if (_student.Name == "" || _student.RfidTag == "" || _student.Group == null)
                 MessageBox.Show("ОШИБКА! Поля не заполнены");
-            else
+
+            /*try
             {
-                _studentsRepository.Save(student);
-                _studentId = default;
+                _studentsRepository.Save(_student);
                 Close();
-            }
+            }*/
+
+            // _student.GroupId = _student.Group.Id;
+            _studentsRepository.Save(_student);
+            Close();
+
+            /*catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }*/
         }
     }
 }

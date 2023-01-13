@@ -22,7 +22,7 @@ namespace DAL
 
         public IQueryable<Student> GetEntries(Group group)
         {
-            return _dbContext.Students.Where(g => g.Group == group).OrderBy(s => s.Name);
+            return _dbContext.Students.Where(g => g.Group == group).Include(g => g.Group).OrderBy(s => s.Name);
         }
 
         public Student? GetEntryByTag(string tag)
@@ -37,15 +37,15 @@ namespace DAL
             return _dbContext.Students.Where(s => s.Id == id).Include(a => a.AttendanceRecords).ToList();
         }
 
-        public void Save(Student? entry)
+        public void Save(Student entry)
         {
             if (entry.Id == default)
             {
-                _dbContext.Add(entry);
+                _dbContext.Students.Add(entry);
             }
             else
             {
-                _dbContext.Update(entry);
+                _dbContext.Students.Update(entry);
             }
             _dbContext.SaveChanges();
             _dbContext.Entry(entry).State = EntityState.Detached;

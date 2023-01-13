@@ -140,7 +140,7 @@ namespace ASClient
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
         {
-            EditWindow editWindow = new(_studentsRepository);
+            EditWindow editWindow = new(_studentsRepository, _groupsRepository, null);
             editWindow.ShowDialog();
             if (!editWindow.IsActive) UpdateStudentsList();
         }
@@ -150,7 +150,7 @@ namespace ASClient
             var student = StudentsList.SelectedItem as Student;
             if (student != null)
             {
-                EditWindow editWindow = new(_studentsRepository, student);
+                EditWindow editWindow = new(_studentsRepository, _groupsRepository, student);
                 editWindow.ShowDialog();
                 if (!editWindow.IsActive) UpdateStudentsList();
             }
