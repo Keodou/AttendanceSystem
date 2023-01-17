@@ -16,19 +16,22 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <!--CRUD operations-->
         <Button x:Name="UpdateStudent" Content="+ Добавить" 
-                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
                 FontSize="16"
                 Margin="10,0,0,0"
                 Width="120"
-                Grid.Column="0" Grid.ColumnSpan="2" Click="UpdateStudent_Click"/>
+                Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" 
+                Click="UpdateStudent_Click"/>
 
-        <ComboBox x:Name="GroupsList" DisplayMemberPath="Number"
-                  HorizontalAlignment="Left" VerticalAlignment="Center" 
-                  Width="120" Height="26" Margin="160,0,0,0" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged"/>
+        <StackPanel Orientation="Horizontal" Margin="10,8,300,8" Grid.ColumnSpan="2">
+            <TextBlock Text="Группа" FontSize="16" Height="23" Width="55"/>
+            <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" Width="100" Height="24"/>
+        </StackPanel>
 
         <!--Students Table-->
         <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
@@ -60,10 +63,10 @@
 
         <!--Reader Options-->
         <TextBlock x:Name="RfidTag" 
-               Text=" AA AA AA AA " Foreground="Red"
+               Foreground="Red"
                HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
                FontSize="16" FontWeight="Bold"
-               Height="25" Grid.Row="2"/>
+               Height="25" Grid.Row="3"/>
         <Button x:Name="ButtonConnectPort" 
                 Content="Подключиться" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
@@ -71,16 +74,16 @@
                 Margin="310,0,0,0" 
                 Click="ButtonConnectPort_Click" 
                 Width="120"
-                Grid.Row="2" Grid.Column="1"
+                Grid.Row="3" Grid.Column="1"
                 Focusable="False"/>
         <Button x:Name="ButtonUpdatePorts" Content="Обновить" 
                 HorizontalAlignment="Left" Margin="173,0,0,0" VerticalAlignment="Center" 
                 FontSize="16" Click="ButtonUpdatePorts_Click" 
                 Width="120"
-                Grid.Row="2" Grid.Column="1"/>
+                Grid.Row="3" Grid.Column="1"/>
         <ComboBox x:Name="PortsList" 
                   HorizontalAlignment="Left" Margin="33,0,0,0" VerticalAlignment="Center" 
                   Width="120" Height="25"
-                  Grid.Row="2" Grid.Column="1"/>
+                  Grid.Row="3" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -124,19 +124,8 @@ namespace ASClient
 
         private void UpdateStudentsList()
         {
-            //string? groupNumber = "";
-            //Dispatcher.Invoke(new Action(() => { groupNumber = GroupsList.SelectedItem as string; }));
-            ///*if (groupNumber is null)
-            //{
-            //    var list = _studentsRepository.GetEntries().ToList();
-            //    Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
-            //}*/
-
-            //var list = _studentsRepository.GetEntries(groupNumber).ToList();
             Dispatcher.Invoke(new Action(() => 
             { StudentsList.ItemsSource = _studentsRepository.GetEntries(GroupsList.SelectedItem as Group).ToList(); }));
-            //StudentsList.ItemsSource = _studentsRepository.GetEntries(GroupsList.SelectedItem as Group).ToList();
-            //StudentsList.ItemsSource = _studentsRepository.GetEntries().ToList();
         }
 
         private void UpdateStudent_Click(object sender, RoutedEventArgs e)
@@ -162,19 +151,10 @@ namespace ASClient
         private void GroupsList_Loaded(object sender, RoutedEventArgs e)
         {
             GroupsList.ItemsSource = _groupsRepository.GetGroups().ToList();
-                
-            //    .GetEntries().AsEnumerable().DistinctBy(g => g.GroupNumber).ToList();
-            //foreach (var group in groups)
-            //{
-            //    GroupsList.Items.Add(group.GroupNumber);
-            //}
         }
 
         private void GroupsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            //var groupNumber = GroupsList.SelectedItem as string;
-            //var list = _studentsRepository.GetEntries(groupNumber).ToList();
-            //Dispatcher.Invoke(new Action(() => { StudentsList.ItemsSource = list; }));
             UpdateStudentsList();
         }
 
