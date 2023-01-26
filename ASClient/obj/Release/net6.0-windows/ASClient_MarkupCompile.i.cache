@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\obj\Release\net6.0-windows\
+C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Release\net6.0-windows\
 ASClient
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\Dmitry\source\repos\AttendanceSystem\ASClient\App.xaml
-2-1646786848
+C:\Users\korob\source\repos\AttendanceSystem\ASClient\App.xaml
+4-375551685
 296349885
-61577535357
-2231028685083
-EditWindow.xaml;MainWindow.xaml;
+9807203020
+223-1472991294
+Views\AuthorizationWindow.xaml;Views\DetailsWindow.xaml;Views\EditWindow.xaml;Views\MainWindow.xaml;
 
 True
 

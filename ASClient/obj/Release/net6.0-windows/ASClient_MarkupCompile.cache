@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\korob\source\repos\AttendanceSystem\ASClient\App.xaml
-3-313160067
+4-375551685
 296349885
-5-1848174391
-1961366709778
-AuthorizationWindow.xaml;EditWindow.xaml;MainWindow.xaml;
+71949294496
+223-1472991294
+Views\AuthorizationWindow.xaml;Views\DetailsWindow.xaml;Views\EditWindow.xaml;Views\MainWindow.xaml;
 
-True
+False
 
