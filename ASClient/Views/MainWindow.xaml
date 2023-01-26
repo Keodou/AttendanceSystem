@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Attendance System Utility" Height="720" Width="1000"
+        Title="Attendance System Utility" Height="720" Width="1060"
         MinHeight="350" MinWidth="650"
         WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
     <Grid ShowGridLines="False" Background="#e0e6ea">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="440"/>
         </Grid.ColumnDefinitions>
@@ -19,25 +20,36 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         
-        <Grid Background="#445c93" Grid.Row="3" Grid.ColumnSpan="2" Panel.ZIndex="-2"/>
+        <Grid Background="#445c93" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Panel.ZIndex="-2"/>
         
+        <!--Menu-->
+        <TextBlock Text="Меню" FontSize="16" 
+                   Grid.Row="0" Grid.Column="0"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Студенты" FontSize="24" Grid.Row="1"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" 
+                BorderThickness="0" Background="#e0e6ea"/>
+        <Button Content="Расписание" FontSize="24" Grid.Row="1"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" 
+                BorderThickness="0" Background="#e0e6ea" Margin="0,40,0,0"/>
+
         <!--CRUD operations-->
         <Button x:Name="UpdateStudent" Content="+ Добавить" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 FontSize="16"
                 Margin="10,0,0,0"
                 Width="120"
-                Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" 
+                Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" 
                 Click="UpdateStudent_Click"/>
 
-        <StackPanel Orientation="Horizontal" Margin="10,8,300,8" Grid.ColumnSpan="2">
+        <StackPanel Orientation="Horizontal" Margin="10,8,300,8" Grid.Column="1" Grid.ColumnSpan="3">
             <TextBlock Text="Группа" FontSize="16" Height="23" Width="55"/>
             <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" Width="100" Height="24"/>
         </StackPanel>
 
         <!--Students Table-->
         <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
-                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
+                  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Blue" Background="White" MouseDoubleClick="StudentsList_MouseDoubleClick">
             <DataGrid.Columns>
@@ -45,7 +57,7 @@
                 <DataGridTextColumn Binding="{Binding Group.Number}" Header="Группа" Width="*"/>
                 <DataGridTextColumn Binding="{Binding RfidTag}" Header="RFID метка" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Attendance}" Header="Посещаемость" Width="*"/>
-                <DataGridTextColumn Binding="{Binding AttendanceTime}" Header="Время прихода" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AttendanceTime}" Header="Время прихода" Width="180"/>
                 <DataGridTemplateColumn Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -68,7 +80,7 @@
                Foreground="Red"
                HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
                FontSize="16" FontWeight="Bold"
-               Height="25" Grid.Row="3"/>
+               Height="25" Grid.Row="3" Grid.Column="1"/>
         <Button x:Name="ButtonConnectPort" 
                 Content="Подключиться" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
@@ -76,16 +88,16 @@
                 Margin="310,0,0,0" 
                 Click="ButtonConnectPort_Click" 
                 Width="120"
-                Grid.Row="3" Grid.Column="1"
+                Grid.Row="3" Grid.Column="2"
                 Focusable="False"/>
         <Button x:Name="ButtonUpdatePorts" Content="Обновить" 
                 HorizontalAlignment="Left" Margin="173,0,0,0" VerticalAlignment="Center" 
                 FontSize="16" Click="ButtonUpdatePorts_Click" 
                 Width="120"
-                Grid.Row="3" Grid.Column="1"/>
+                Grid.Row="3" Grid.Column="2"/>
         <ComboBox x:Name="PortsList" 
                   HorizontalAlignment="Left" Margin="33,0,0,0" VerticalAlignment="Center" 
                   Width="120" Height="25"
-                  Grid.Row="3" Grid.Column="1"/>
+                  Grid.Row="3" Grid.Column="2"/>
     </Grid>
 </Window>
