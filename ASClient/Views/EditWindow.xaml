@@ -57,11 +57,11 @@
                  Width="216"/>
         <TextBlock Text="Время прихода" 
                    Grid.Column="1" Margin="12,227,110,51" Grid.Row="1" FontSize="15" Grid.RowSpan="2"/>
-        <TextBox x:Name="attendanceTime" Text="{Binding AttendanceTime}"
+        <DatePicker x:Name="attendanceTime" SelectedDate="{Binding AttendanceTime}"
                  Grid.Column="1" Grid.Row="1" 
-                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,254,0,0" 
-                 TextWrapping="Wrap" FontSize="15" 
-                 Width="216"/>
+                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,251,0,0" 
+                 FontSize="15" 
+                 Width="216" Height="29"/>
 
         <!--Buttons-->
         <Button x:Name="ButtonSave" Content="Сохранить" 

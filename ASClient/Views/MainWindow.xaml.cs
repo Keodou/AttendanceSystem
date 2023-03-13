@@ -22,7 +22,8 @@ namespace ASClient
         private Reader _reader;
         private SerialPort _rfidPort;
 
-        public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository, GroupsRepository groupsRepository)
+        public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository, 
+            GroupsRepository groupsRepository)
         {
             InitializeComponent();
             _studentsRepository = studentsRepository;
