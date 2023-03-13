@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GQy2LmVlgccysNFca5/HCTXaQRfKz1Gscpg1UEHLZo79GiNZ1KbFBFzBjUnvIUiFgYAiOBKT7N58kGsHJc1pNA==",
+  "dgSpecHash": "vQVJNyEpLqKoLFn9KfdQ+YDX7EDfSIOssBzyelbz5DH5S7Z+TwpR46b/sUFauKkEBL90zT72lkGbckPxonAOng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj",
+  "projectFilePath": "D:\\Programming\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\korob\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\korob\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\korob\source\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\
+D:\Programming\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\
 ASClient
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\korob\source\repos\AttendanceSystem\ASClient\App.xaml
+D:\Programming\repos\AttendanceSystem\ASClient\App.xaml
 4-375551685
 296349885
 71949294496
-223525671174
+22347134343
 Views\AuthorizationWindow.xaml;Views\DetailsWindow.xaml;Views\EditWindow.xaml;Views\MainWindow.xaml;
 
 False

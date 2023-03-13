@@ -47,7 +47,7 @@ namespace ASClient
             if (student is not null)
             {
                 student.Attendance = "Присутствует";
-                student.AttendanceTime = DateTime.Now.ToString();
+                student.AttendanceTime = DateTime.Now;
                 _studentsRepository.Save(student);
 
                 var attendanceRecord = new AttendanceRecord()

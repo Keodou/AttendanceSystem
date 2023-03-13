@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z7SCNKwF41OEmmliJJ0UBw8GNdppuy1OR4ZADbz8o3Deqj374Hqsa2sMhn+PCUuD8E9XirIowwweWU7Kxh5kMg==",
+  "dgSpecHash": "dPpfn5NpRYdJQV4JajyXQobaxjDuYXY8PuEj1V9qgUli8sbADNLxGR3VoGpGwiT0L86h1Zm003R/OOCPqyusKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
+  "projectFilePath": "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\korob\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
     "C:\\Users\\korob\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",

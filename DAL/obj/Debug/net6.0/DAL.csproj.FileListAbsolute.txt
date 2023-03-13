@@ -34,3 +34,15 @@ C:\Users\korob\source\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.dll
 C:\Users\korob\source\repos\AttendanceSystem\DAL\obj\Debug\net6.0\refint\DAL.dll
 C:\Users\korob\source\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.pdb
 C:\Users\korob\source\repos\AttendanceSystem\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Programming\repos\AttendanceSystem\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Programming\repos\AttendanceSystem\DAL\bin\Debug\net6.0\DAL.dll
+D:\Programming\repos\AttendanceSystem\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.dll
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Programming\repos\AttendanceSystem\DAL\obj\Debug\net6.0\ref\DAL.dll

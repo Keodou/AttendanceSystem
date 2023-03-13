@@ -19,17 +19,17 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        
+
         <Grid Background="#445c93" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Panel.ZIndex="-2"/>
-        
+
         <!--Menu-->
-        <TextBlock Text="Меню" FontSize="16" 
+        <TextBlock Text="Меню" FontSize="16" FontWeight="Bold" 
                    Grid.Row="0" Grid.Column="0"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Студенты" FontSize="24" Grid.Row="1"
+        <Button Content="Студенты" FontSize="16" Grid.Row="1"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" 
                 BorderThickness="0" Background="#e0e6ea"/>
-        <Button Content="Расписание" FontSize="24" Grid.Row="1"
+        <Button Content="Расписание" FontSize="16" Grid.Row="1"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" 
                 BorderThickness="0" Background="#e0e6ea" Margin="0,40,0,0"/>
 
@@ -80,7 +80,8 @@
                Foreground="Red"
                HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
                FontSize="16" FontWeight="Bold"
-               Height="25" Grid.Row="3" Grid.Column="1"/>
+               Height="25"
+               Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
         <Button x:Name="ButtonConnectPort" 
                 Content="Подключиться" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kFkK05JCEd1XkXiNj6gGKhNeeUf3nW1fw7tZVWNbIUmD93+jQu4531YAFEdd9eDrqfXA4q1Xz86/wd8lf+Cidw==",
+  "dgSpecHash": "ik9LVV/N5EHmsAf7eIEQCboa4yFJ59YWPs1zUdJsF9+prrrJbjr2sa7rZ3GdVoIWg0B4JteMjK8srbdFFxTsbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
+  "projectFilePath": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\korob\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\korob\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

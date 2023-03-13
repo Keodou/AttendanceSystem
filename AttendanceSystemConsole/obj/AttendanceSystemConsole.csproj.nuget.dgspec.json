@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj": {}
+    "D:\\Programming\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj": {}
   },
   "projects": {
-    "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj": {
+    "D:\\Programming\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj",
+        "projectUniqueName": "D:\\Programming\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj",
         "projectName": "AttendanceSystemConsole",
-        "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj",
+        "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\AttendanceSystemConsole\\AttendanceSystemConsole.csproj",
         "packagesPath": "C:\\Users\\korob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\AttendanceSystemConsole\\obj\\",
+        "outputPath": "D:\\Programming\\repos\\AttendanceSystem\\AttendanceSystemConsole\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\korob\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj"
+              "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
-                "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj"
+              "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
+                "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj"
               }
             }
           }
@@ -94,18 +94,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj": {
+    "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
+        "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\korob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\obj\\",
+        "outputPath": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\korob\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -159,18 +159,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
+    "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
+        "projectUniqueName": "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
         "projectName": "RfidReader",
-        "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
+        "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
         "packagesPath": "C:\\Users\\korob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\obj\\",
+        "outputPath": "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\korob\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -220,7 +220,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1916,11 +1916,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
+      "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\korob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\obj\\",
+      "outputPath": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\korob\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1974,7 +1974,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

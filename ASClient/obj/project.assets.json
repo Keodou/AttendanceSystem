@@ -2614,11 +2614,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\ASClient\\ASClient.csproj",
+      "projectUniqueName": "D:\\Programming\\repos\\AttendanceSystem\\ASClient\\ASClient.csproj",
       "projectName": "ASClient",
-      "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\ASClient\\ASClient.csproj",
+      "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\ASClient\\ASClient.csproj",
       "packagesPath": "C:\\Users\\korob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\ASClient\\obj\\",
+      "outputPath": "D:\\Programming\\repos\\AttendanceSystem\\ASClient\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\korob\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2635,11 +2635,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\DAL\\DAL.csproj"
+            "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
-              "projectPath": "C:\\Users\\korob\\source\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj"
+            "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj": {
+              "projectPath": "D:\\Programming\\repos\\AttendanceSystem\\RfidReader\\RfidReader.csproj"
             }
           }
         }
@@ -2686,7 +2686,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
