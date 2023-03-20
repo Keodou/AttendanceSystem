@@ -34,6 +34,6 @@
                 Width="100"
                 Grid.Row="3" Grid.Column="1"
                 BorderBrush="Red" Click="Close_Click"/>
-        <ComboBox x:Name="DatesList" HorizontalAlignment="Left" Margin="10,4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="DatesList" HorizontalAlignment="Left" Margin="10,4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Loaded="DatesList_Loaded" SelectionChanged="DatesList_SelectionChanged"/>
     </Grid>
 </Window>

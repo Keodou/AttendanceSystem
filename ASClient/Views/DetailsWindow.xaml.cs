@@ -36,9 +36,26 @@ namespace ASClient.Views
             Close();
         }
 
+        private void DatesList_Loaded(object sender, RoutedEventArgs e)
+        {
+            var records = _attendanceRecords.AsEnumerable().DistinctBy(r => r.AttendanceTime).ToList();
+            foreach (var record in records)
+            {
+                DatesList.Items.Add(record.AttendanceTime);
+            }
+        }
+
         private void DatesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            UpdateRecords();
+        }
 
+        private void UpdateRecords()
+        {
+            DateTime date = default;
+            date = Convert.ToDateTime(DatesList.SelectedItem as string);
+            var list = _attendanceRecords.Where(l => l.AttendanceTime == date);
+            HistoryList.ItemsSource = list;
         }
     }
 }
