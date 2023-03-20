@@ -13,6 +13,11 @@ namespace DAL.Models.Repositories
             _dbContext = dbContext;
         }
 
+        public AttendanceRecord GetAttendanceRecord()
+        {
+            return _dbContext.AttendanceRecords.LastOrDefault();
+        }
+
         public void Save(AttendanceRecord? entry)
         {
             if (entry.Id == default)

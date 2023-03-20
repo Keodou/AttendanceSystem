@@ -5,13 +5,13 @@
              Startup="OnStartup">
     <Application.Resources>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="Blue"/>
+            <Setter Property="Background" Value="#e0e6ea"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Height" Value="26"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="Blue"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="Height" Value="26"/>
         </Style>
         <Style TargetType="ComboBox">

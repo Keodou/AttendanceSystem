@@ -61,7 +61,7 @@
                  Grid.Column="1" Grid.Row="1" 
                  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,251,0,0" 
                  FontSize="15" 
-                 Width="216" Height="29"/>
+                 Width="216" Height="29" FirstDayOfWeek="Monday"/>
 
         <!--Buttons-->
         <Button x:Name="ButtonSave" Content="Сохранить" 

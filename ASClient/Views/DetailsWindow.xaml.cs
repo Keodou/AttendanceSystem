@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Entities;
+using DAL.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +22,23 @@ namespace ASClient.Views
     /// </summary>
     public partial class DetailsWindow : Window
     {
+        private List<AttendanceRecord> _attendanceRecords;
+
         public DetailsWindow(Student student, StudentsRepository studentsRepository)
         {
             InitializeComponent();
-            HistoryList.ItemsSource = student.AttendanceRecords;
+            _attendanceRecords = student.AttendanceRecords;
+            HistoryList.ItemsSource = _attendanceRecords;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void DatesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
