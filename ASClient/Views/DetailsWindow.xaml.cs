@@ -53,7 +53,7 @@ namespace ASClient.Views
         private void UpdateRecords()
         {
             DateTime date = default;
-            date = Convert.ToDateTime(DatesList.SelectedItem as string);
+            date = Convert.ToDateTime(DatesList.SelectedItem);
             var list = _attendanceRecords.Where(l => l.AttendanceTime == date);
             HistoryList.ItemsSource = list;
         }
