@@ -54,6 +54,7 @@ namespace ASClient
                 var attendanceRecord = new AttendanceRecord()
                 {
                     Attendance = student.Attendance,
+                    AttendanceDate = student.AttendanceTime.Date,
                     AttendanceTime = student.AttendanceTime,
                     StudentId = student.Id
                 };

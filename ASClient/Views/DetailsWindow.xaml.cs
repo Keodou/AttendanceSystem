@@ -38,10 +38,10 @@ namespace ASClient.Views
 
         private void DatesList_Loaded(object sender, RoutedEventArgs e)
         {
-            var records = _attendanceRecords.AsEnumerable().DistinctBy(r => r.AttendanceTime).ToList();
+            var records = _attendanceRecords.AsEnumerable().DistinctBy(r => r.AttendanceDate).ToList();
             foreach (var record in records)
             {
-                DatesList.Items.Add(record.AttendanceTime);
+                DatesList.Items.Add(record.AttendanceDate);
             }
         }
 
@@ -54,8 +54,13 @@ namespace ASClient.Views
         {
             DateTime date = default;
             date = Convert.ToDateTime(DatesList.SelectedItem);
-            var list = _attendanceRecords.Where(l => l.AttendanceTime == date);
+            var list = _attendanceRecords.Where(l => l.AttendanceDate == date);
             HistoryList.ItemsSource = list;
+        }
+
+        private void DatesList2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateRecords();
         }
     }
 }
