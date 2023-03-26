@@ -21,7 +21,6 @@
         <Grid Background="#e0e6ea" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Panel.ZIndex="-2"/>
 
         <!--CRUD operations-->
-
         <StackPanel Orientation="Horizontal" Margin="10,8,0,8" Grid.Column="0">
             <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" Width="100" Height="24"/>
             <Button x:Name="UpdateStudent" Content="Добавить" VerticalAlignment="Top" 

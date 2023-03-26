@@ -34,7 +34,6 @@
                 Width="100"
                 Grid.Row="3" Grid.Column="1"
                 BorderBrush="Red" Click="Close_Click"/>
-        <ComboBox x:Name="DatesList" HorizontalAlignment="Left" Margin="10,4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Loaded="DatesList_Loaded" SelectionChanged="DatesList_SelectionChanged"/>
-        <DatePicker x:Name="DatesList2" HorizontalAlignment="Left" Margin="134,3,0,0" VerticalAlignment="Top" Height="26" Width="139" Grid.Row="1" SelectedDateChanged="DatesList2_SelectionChanged"/>
+        <DatePicker x:Name="DatesList" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="36" Width="139" Grid.Row="1" SelectedDateChanged="DatesList_SelectionChanged"/>
     </Grid>
 </Window>
