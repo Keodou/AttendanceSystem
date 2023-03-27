@@ -174,7 +174,7 @@ namespace ASClient
 
         private void OpenHistory_Click(object sender, RoutedEventArgs e)
         {
-            HistoryWindow history = new(_recordsRepository);
+            HistoryWindow history = new(_recordsRepository, _groupsRepository);
             history.ShowDialog();
         }
     }

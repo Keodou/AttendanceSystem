@@ -18,9 +18,9 @@ namespace DAL.Models.Repositories
             return _dbContext.AttendanceRecords.Include(a => a.Student).ToList();
         }
 
-        public List<AttendanceRecord> GetAttendanceRecords(DateTime date)
+        public List<AttendanceRecord> GetAttendanceRecords(Group group)
         {
-            return _dbContext.AttendanceRecords.Include(a => a.Student).Where(a => a.AttendanceDate == date).ToList();
+            return _dbContext.AttendanceRecords.Include(a => a.Student).Where(a => a.Student.Group == group).ToList();
         }
 
         public void Save(AttendanceRecord? entry)

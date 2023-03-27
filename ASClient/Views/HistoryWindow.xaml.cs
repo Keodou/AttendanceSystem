@@ -1,17 +1,7 @@
-﻿using DAL.Models.Repositories;
-using System;
-using System.Collections.Generic;
+﻿using DAL.Models.Entities;
+using DAL.Models.Repositories;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ASClient.Views
 {
@@ -21,17 +11,24 @@ namespace ASClient.Views
     public partial class HistoryWindow : Window
     {
         private readonly AttendanceRecordsRepository _recordsRepository;
+        //private readonly GroupsRepository _groupsRepository;
 
-        public HistoryWindow(AttendanceRecordsRepository recordsRepository)
+        public HistoryWindow(AttendanceRecordsRepository recordsRepository, GroupsRepository groupsRepository)
         {
             InitializeComponent();
             _recordsRepository = recordsRepository;
+            GroupsList.ItemsSource = groupsRepository.GetGroups().ToList();
             EntriesList.ItemsSource = _recordsRepository.GetAttendanceRecords();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void GroupsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            EntriesList.ItemsSource = _recordsRepository.GetAttendanceRecords(GroupsList.SelectedItem as Group);
         }
     }
 }

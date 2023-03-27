@@ -9,15 +9,15 @@
         WindowStyle="None" ResizeMode="NoResize">
     <Grid Background="#e0e6ea">
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2.6*"/>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="История" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    FontSize="26" FontWeight="Bold"/>
-        
+
         <!--Entries Table-->
         <DataGrid x:Name="EntriesList" Margin="8" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"
                   Grid.Row="2" FontSize="16" 
@@ -35,5 +35,6 @@
                 Width="100"
                 Grid.Row="3" Grid.Column="1"
                 BorderBrush="Red" Click="Close_Click"/>
+        <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="120" SelectionChanged="GroupsList_SelectionChanged"/>
     </Grid>
 </Window>
