@@ -14,7 +14,7 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="История посещаемости" 
+        <TextBlock Text="История посещаемости студента" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    FontSize="26" FontWeight="Bold"/>
 

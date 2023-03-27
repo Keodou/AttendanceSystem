@@ -28,6 +28,10 @@
                 Margin="10,-2,0,0"
                 Width="120" 
                 Click="UpdateStudent_Click"/>
+            <Button x:Name="OpenHistory" Content="История" VerticalAlignment="Top" 
+                FontSize="16"
+                Margin="10,-2,0,0"
+                Width="120" Click="OpenHistory_Click"/>
         </StackPanel>
 
         <!--Students Table-->

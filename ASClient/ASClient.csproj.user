@@ -18,6 +18,9 @@
     <Compile Update="Views\EditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\HistoryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\AuthorizationWindow.xaml">
@@ -27,6 +30,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EditWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HistoryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

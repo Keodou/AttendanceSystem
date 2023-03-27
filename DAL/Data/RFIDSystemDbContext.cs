@@ -1,5 +1,4 @@
-﻿using DAL.Entities;
-using DAL.Models.Entities;
+﻿using DAL.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 

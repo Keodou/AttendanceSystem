@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Programming\repos\AttendanceSystem\ASClient\App.xaml
-4-375551685
+51864734375
 296349885
-71949294496
+8-908333287
 223576860701
-Views\AuthorizationWindow.xaml;Views\DetailsWindow.xaml;Views\EditWindow.xaml;Views\MainWindow.xaml;
+Views\AuthorizationWindow.xaml;Views\DetailsWindow.xaml;Views\EditWindow.xaml;Views\HistoryWindow.xaml;Views\MainWindow.xaml;
 
 False
 

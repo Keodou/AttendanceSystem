@@ -13,9 +13,9 @@ namespace DAL.Models.Repositories
             _dbContext = dbContext;
         }
 
-        public AttendanceRecord GetAttendanceRecord()
+        public List<AttendanceRecord> GetAttendanceRecords()
         {
-            return _dbContext.AttendanceRecords.LastOrDefault();
+            return _dbContext.AttendanceRecords.Include(a => a.Student).ToList();
         }
 
         public void Save(AttendanceRecord? entry)

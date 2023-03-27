@@ -306,3 +306,5 @@ D:\Programming\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\refint\A
 D:\Programming\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.pdb
 D:\Programming\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ASClient.genruntimeconfig.cache
 D:\Programming\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\ref\ASClient.dll
+D:\Programming\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\Views\HistoryWindow.g.cs
+D:\Programming\repos\AttendanceSystem\ASClient\obj\Debug\net6.0-windows\Views\HistoryWindow.baml

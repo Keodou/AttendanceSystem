@@ -1,6 +1,5 @@
 ﻿using ASClient.Views;
 using DAL;
-using DAL.Entities;
 using DAL.Models.Entities;
 using DAL.Models.Repositories;
 using RfidReader;
@@ -171,6 +170,12 @@ namespace ASClient
             }
             else
                 RfidTag.Text = "ОШИБКА! Выберите студента для просмотра его истории посещаемости";
+        }
+
+        private void OpenHistory_Click(object sender, RoutedEventArgs e)
+        {
+            HistoryWindow history = new(_recordsRepository);
+            history.ShowDialog();
         }
     }
 }
