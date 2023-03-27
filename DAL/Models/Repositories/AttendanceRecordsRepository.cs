@@ -18,6 +18,11 @@ namespace DAL.Models.Repositories
             return _dbContext.AttendanceRecords.Include(a => a.Student).ToList();
         }
 
+        public List<AttendanceRecord> GetAttendanceRecords(DateTime date)
+        {
+            return _dbContext.AttendanceRecords.Include(a => a.Student).Where(a => a.AttendanceDate == date).ToList();
+        }
+
         public void Save(AttendanceRecord? entry)
         {
             if (entry.Id == default)
