@@ -24,7 +24,7 @@
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Blue" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Student.Name}" Header="Имя" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Student.Name}" Header="Имя" Width="340"/>
                 <DataGridTextColumn Binding="{Binding Attendance}" Header="Посещаемость" Width="*"/>
                 <DataGridTextColumn Binding="{Binding AttendanceTime}" Header="Дата посещения" Width="*"/>
             </DataGrid.Columns>
@@ -35,6 +35,7 @@
                 Width="100"
                 Grid.Row="3" Grid.Column="1"
                 BorderBrush="Red" Click="Close_Click"/>
-        <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="120" SelectionChanged="GroupsList_SelectionChanged"/>
+        <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="GroupsList_SelectionChanged" Height="32"/>
+        <DatePicker x:Name="DatesList" HorizontalAlignment="Left" Margin="140,2,0,0" Grid.Row="1" VerticalAlignment="Top" SelectedDateChanged="DatesList_SelectionChanged"/>
     </Grid>
 </Window>
