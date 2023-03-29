@@ -14,7 +14,6 @@ namespace ASClient.Views
     public partial class HistoryWindow : Window
     {
         private readonly AttendanceRecordsRepository _recordsRepository;
-        //private readonly GroupsRepository _groupsRepository;
 
         public HistoryWindow(AttendanceRecordsRepository recordsRepository, GroupsRepository groupsRepository)
         {

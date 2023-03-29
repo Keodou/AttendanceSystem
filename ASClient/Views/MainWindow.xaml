@@ -18,8 +18,6 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#e0e6ea" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Panel.ZIndex="-2"/>
-
         <!--CRUD operations-->
         <StackPanel Orientation="Horizontal" Margin="10,8,0,8" Grid.Column="0">
             <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" Width="100" Height="24"/>
@@ -35,14 +33,14 @@
         </StackPanel>
 
         <!--Students Table-->
-        <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" Loaded="StudentsList_Loaded" IsReadOnly="True" CanUserAddRows="False"
+        <DataGrid x:Name="StudentsList" Margin="8,0,8,0" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"
                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Gray" Background="White" MouseDoubleClick="StudentsList_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="300"/>
                 <DataGridTextColumn Binding="{Binding Group.Number}" Header="Группа" Width="*"/>
-                <DataGridTextColumn Binding="{Binding AttendanceTime}" Header="Время прихода" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AttendanceTime, ConverterCulture=ru-ru}" Header="Время прихода" Width="*"/>
                 <DataGridTemplateColumn Width="40">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
