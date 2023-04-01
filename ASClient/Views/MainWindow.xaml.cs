@@ -20,6 +20,7 @@ namespace ASClient
         private GroupsRepository _groupsRepository;
         private Reader _reader;
         private SerialPort _rfidPort;
+        private DeteminantPair _determinantPair;
 
         public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository, 
             GroupsRepository groupsRepository)
@@ -31,6 +32,7 @@ namespace ASClient
             _rfidPort = new();
             _reader = new(_rfidPort);
             _rfidPort.DataReceived += new(Recieve);
+            _determinantPair = new DeteminantPair();
         }
 
         private void Recieve(object sender, SerialDataReceivedEventArgs e)
@@ -55,7 +57,8 @@ namespace ASClient
                     Attendance = student.Attendance,
                     AttendanceDate = student.AttendanceTime.Date,
                     AttendanceTime = student.AttendanceTime,
-                    StudentId = student.Id
+                    StudentId = student.Id,
+                    Pair = _determinantPair.GetPairByTime(student.AttendanceTime)
                 };
                 _recordsRepository.Save(attendanceRecord);
             }
