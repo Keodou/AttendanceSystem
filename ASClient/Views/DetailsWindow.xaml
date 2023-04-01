@@ -24,7 +24,7 @@
                   BorderBrush="Blue" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Path=AttendanceTime}" Header="Дата посещения" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=AttendanceTime, ConverterCulture=ru-ru}" Header="Дата посещения" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

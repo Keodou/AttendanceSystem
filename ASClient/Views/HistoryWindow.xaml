@@ -27,6 +27,7 @@
                 <DataGridTextColumn Binding="{Binding Student.Name}" Header="Имя" Width="340"/>
                 <DataGridTextColumn Binding="{Binding Attendance}" Header="Посещаемость" Width="*"/>
                 <DataGridTextColumn Binding="{Binding AttendanceTime, StringFormat=t, ConverterCulture=ru-ru}" Header="Дата посещения" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Pair}" Header="Пара" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Close" Content="Закрыть" 

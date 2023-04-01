@@ -8,5 +8,6 @@
         public DateTime? AttendanceTime { get; set; }
         public int StudentId { get; set; }
         public Student Student { get; set; }
+        public string? Pair { get; set; }
     }
 }
