@@ -10,17 +10,36 @@ namespace ASClient
     {
         public string GetPairByTime(DateTime attendanceDateTime)
         {
-            TimeOnly attendanceTime = TimeOnly.FromDateTime(attendanceDateTime);
-            TimeOnly startPair = new(21, 20, 00);
-            TimeOnly endPair = new(22, 30, 00);
-            if (attendanceTime >= startPair && attendanceTime <= endPair)
+            TimeOnly currentTime = TimeOnly.FromDateTime(attendanceDateTime);
+
+            // Расписание пар и перерывов
+            TimeOnly[] schedule = new TimeOnly[]
             {
-                return "1 пара";
-            }
-            else
+                new TimeOnly(8, 30, 0),   // Первая пара
+                new TimeOnly(10, 15, 0),   // Вторая пара
+                new TimeOnly(12, 20, 0),  // Третья пара
+                new TimeOnly(14, 5, 0),  // Четвертая пара
+                new TimeOnly(15, 50, 0),   // Пятая пара
+                new TimeOnly(17, 35, 0),
+                new TimeOnly(19, 10, 0)
+            };
+
+            // Определение текущей пары
+            int currentPair = 0;
+            for (int i = 0; i < schedule.Length; i++)
             {
-                return "Другая пара";
+                if (currentTime >= schedule[i] && currentTime < schedule[i + 1])
+                {
+                    currentPair = i + 1;
+                }
+                else
+                {
+                    currentPair = 0;
+                }
             }
+
+            // Вывод результата
+            return $"{currentPair} пара";
         }
     }
 }

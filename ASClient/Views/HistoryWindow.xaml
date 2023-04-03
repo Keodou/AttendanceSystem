@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ASClient.Views"
         mc:Ignorable="d"
         Title="История посещаемости" Height="520" Width="800" WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize">
+        WindowStyle="None"  ResizeMode="NoResize">
     <Grid Background="#e0e6ea">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
