@@ -36,7 +36,18 @@
                 Width="100"
                 Grid.Row="3" Grid.Column="1"
                 BorderBrush="Red" Click="Close_Click"/>
-        <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="GroupsList_SelectionChanged" Height="32"/>
-        <DatePicker x:Name="DatesList" HorizontalAlignment="Left" Margin="140,2,0,0" Grid.Row="1" VerticalAlignment="Top" SelectedDateChanged="DatesList_SelectionChanged"/>
+        <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" 
+                  HorizontalAlignment="Left" 
+                  Margin="10,2,0,0" 
+                  Grid.Row="1" VerticalAlignment="Top" 
+                  Width="120" SelectionChanged="GroupsList_SelectionChanged" Height="32"/>
+        <DatePicker x:Name="DatesList" 
+                    HorizontalAlignment="Left" Margin="140,2,0,0" Grid.Row="1" VerticalAlignment="Top" 
+                    SelectedDateChanged="DatesList_SelectionChanged"/>
+        <ComboBox x:Name="PairsList" DisplayMemberPath="PairNumber"
+                  HorizontalAlignment="Left" 
+                  Margin="251,2,0,0" 
+                  Grid.Row="1" VerticalAlignment="Top" 
+                  Width="120" Height="32" SelectionChanged="PairsList_SelectionChanged"/>
     </Grid>
 </Window>

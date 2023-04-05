@@ -14,6 +14,8 @@ namespace ASClient.Views
     public partial class HistoryWindow : Window
     {
         private readonly AttendanceRecordsRepository _recordsRepository;
+        private readonly Schedule _schedule;
+        private readonly ScheduleFiller _scheduleFiller;
 
         public HistoryWindow(AttendanceRecordsRepository recordsRepository, GroupsRepository groupsRepository)
         {
@@ -21,6 +23,9 @@ namespace ASClient.Views
             _recordsRepository = recordsRepository;
             GroupsList.ItemsSource = groupsRepository.GetGroups().ToList();
             EntriesList.ItemsSource = _recordsRepository.GetAttendanceRecords();
+            _schedule = new Schedule();
+            _scheduleFiller = new ScheduleFiller(_schedule);
+            PairsList.ItemsSource = _scheduleFiller.GetSchedule();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -52,6 +57,11 @@ namespace ASClient.Views
                 list = _recordsRepository.GetAttendanceRecords(date);
             }
             EntriesList.ItemsSource = list;
+        }
+
+        private void PairsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

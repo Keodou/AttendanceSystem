@@ -4,9 +4,11 @@ using DAL.Models.Entities;
 using DAL.Models.Repositories;
 using RfidReader;
 using System;
+using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace ASClient
 {
@@ -20,7 +22,9 @@ namespace ASClient
         private GroupsRepository _groupsRepository;
         private Reader _reader;
         private SerialPort _rfidPort;
-        private DeteminantPair _determinantPair;
+        private DeterminantPair _determinantPair;
+        private Schedule _schedule;
+        private ScheduleFiller _scheduleFiller;
 
         public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository, 
             GroupsRepository groupsRepository)
@@ -32,7 +36,9 @@ namespace ASClient
             _rfidPort = new();
             _reader = new(_rfidPort);
             _rfidPort.DataReceived += new(Recieve);
-            _determinantPair = new DeteminantPair();
+            _schedule = new Schedule();
+            _scheduleFiller = new ScheduleFiller(_schedule);
+            _determinantPair = new DeterminantPair(_scheduleFiller.GetSchedule());
         }
 
         private void Recieve(object sender, SerialDataReceivedEventArgs e)
