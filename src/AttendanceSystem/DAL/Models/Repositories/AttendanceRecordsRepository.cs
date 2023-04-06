@@ -43,6 +43,14 @@ namespace DAL.Models.Repositories
                 .ToList();
         }
 
+        public List<AttendanceRecord> GetAttendanceRecords(Group group, DateTime date, string pair)
+        {
+            return _dbContext.AttendanceRecords
+                .Include(a => a.Student)
+                .Where(a => a.AttendanceDate == date && a.Student.Group == group && a.Pair == pair)
+                .ToList();
+        }
+
         public void Save(AttendanceRecord? entry)
         {
             if (entry.Id == default)

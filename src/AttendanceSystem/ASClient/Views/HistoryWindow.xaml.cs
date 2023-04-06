@@ -22,7 +22,6 @@ namespace ASClient.Views
             InitializeComponent();
             _recordsRepository = recordsRepository;
             GroupsList.ItemsSource = groupsRepository.GetGroups().ToList();
-            EntriesList.ItemsSource = _recordsRepository.GetAttendanceRecords();
             _schedule = new Schedule();
             _scheduleFiller = new ScheduleFiller(_schedule);
             PairsList.ItemsSource = _scheduleFiller.GetSchedule();
@@ -35,16 +34,16 @@ namespace ASClient.Views
 
         private void GroupsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            EntriesList.ItemsSource = _recordsRepository.GetAttendanceRecords(GroupsList.SelectedItem as Group);
+            //EntriesList.ItemsSource = _recordsRepository.GetAttendanceRecords(GroupsList.SelectedItem as Group);
         }
 
         private void DatesList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             DateTime date = Convert.ToDateTime(DatesList.SelectedDate);
-            UpdateRecords(date);
+            UpdateRecords(date, PairsList.SelectedItem as string);
         }
 
-        private void UpdateRecords(DateTime date)
+        /*private void UpdateRecords(DateTime date)
         {
             List<AttendanceRecord> list = _recordsRepository.GetAttendanceRecords();
             if (GroupsList.SelectedIndex > 0)
@@ -57,11 +56,28 @@ namespace ASClient.Views
                 list = _recordsRepository.GetAttendanceRecords(date);
             }
             EntriesList.ItemsSource = list;
+        }*/
+
+        private void UpdateRecords(DateTime date, string pair)
+        {
+            List<AttendanceRecord> list = _recordsRepository.GetAttendanceRecords();
+            if (GroupsList.SelectedIndex > 0 && PairsList.SelectedIndex >= 0)
+            {
+                list = _recordsRepository.GetAttendanceRecords(GroupsList.SelectedItem as Group, date, pair)
+                    .DistinctBy(a => a.Student.Name).ToList();
+            }
+            else
+            {
+                list = _recordsRepository.GetAttendanceRecords(date);
+            }
+            EntriesList.ItemsSource = list;
         }
 
         private void PairsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-
+            var pair = PairsList.SelectedItem as Schedule;
+            string pairStr = pair.PairNumber;
+            UpdateRecords(Convert.ToDateTime(DatesList.SelectedDate), pairStr);
         }
     }
 }
