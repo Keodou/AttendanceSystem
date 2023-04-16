@@ -19,7 +19,9 @@ namespace ASClient.Views
         {
             InitializeComponent();
             _attendanceRecords = student.AttendanceRecords;
-            HistoryList.ItemsSource = _attendanceRecords;
+            HistoryList.ItemsSource = _attendanceRecords
+                .DistinctBy(l => l.Pair)
+                .OrderBy(l => l.Pair).ToList();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -35,7 +37,10 @@ namespace ASClient.Views
 
         private void UpdateRecords(DateTime date)
         {
-            var list = _attendanceRecords.Where(l => l.AttendanceDate == date);
+            var list = _attendanceRecords.Where(l => l.AttendanceDate == date)
+                .DistinctBy(l => l.Pair)
+                .OrderBy(l => l.Pair)
+                .ToList();
             HistoryList.ItemsSource = list;
         }
     }
