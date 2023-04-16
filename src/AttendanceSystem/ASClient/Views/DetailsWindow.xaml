@@ -21,7 +21,7 @@
         <DataGrid x:Name="HistoryList" Margin="8" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"
                   Grid.Row="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
-                  BorderBrush="Blue" Background="White">
+                  BorderBrush="Gray" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Attendance}" Header="Посещаемость" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=AttendanceTime, ConverterCulture=ru-ru}" Header="Дата посещения" Width="*"/>

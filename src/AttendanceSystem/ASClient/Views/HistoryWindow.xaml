@@ -22,7 +22,7 @@
         <DataGrid x:Name="EntriesList" Margin="8" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"
                   Grid.Row="2" FontSize="16" 
                   GridLinesVisibility="None" CanUserResizeColumns="False"
-                  BorderBrush="Blue" Background="White">
+                  BorderBrush="Gray" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Student.Name}" Header="Имя" Width="340"/>
                 <DataGridTextColumn Binding="{Binding Attendance}" Header="Посещаемость" Width="*"/>

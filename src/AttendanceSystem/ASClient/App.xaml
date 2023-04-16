@@ -14,9 +14,13 @@
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="Height" Value="26"/>
         </Style>
-        <Style TargetType="ComboBox">
-            <Setter Property="Background" Value="Blue"/>
-            <Setter Property="BorderBrush" Value="Blue"/>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Height" Value="26"/>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="BorderBrush" Value="Gray"/>
         </Style>
         <Style TargetType="Window">
             <Setter Property="Background" Value="#e0e6ea"/>

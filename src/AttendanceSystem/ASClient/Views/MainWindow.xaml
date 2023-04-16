@@ -38,7 +38,7 @@
                   Margin="10,-2,0,0"
                   Width="100" Height="24" Grid.Column="1"/>
             <Button x:Name="ButtonConnectPort" 
-                Content="П" 
+                Content="ВКЛ" 
                 FontSize="16" Margin="10,-2,0,0"
                 Click="ButtonConnectPort_Click"
                 Width="36"
@@ -55,7 +55,7 @@
                   GridLinesVisibility="None" CanUserResizeColumns="False"
                   BorderBrush="Gray" Background="White" MouseDoubleClick="StudentsList_MouseDoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Group.Number}" Header="Группа" Width="*"/>
                 <DataGridTextColumn Binding="{Binding AttendanceTime, ConverterCulture=ru-ru}" Header="Время прихода" Width="*"/>
             </DataGrid.Columns>
