@@ -1,6 +1,5 @@
 ﻿using DAL.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace DAL.Data
 {

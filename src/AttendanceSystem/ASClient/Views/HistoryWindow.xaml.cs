@@ -68,7 +68,7 @@ namespace ASClient.Views
             }
             else
             {
-                list = _recordsRepository.GetAttendanceRecords(date);
+                list = _recordsRepository.GetAttendanceRecords(date).DistinctBy(a => a.Student.Name).ToList();
             }
             EntriesList.ItemsSource = list;
         }

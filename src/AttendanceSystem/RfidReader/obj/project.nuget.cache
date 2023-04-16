@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mT69dh5DJjO4Kkg6c5c7owQZuz0Y4iNgCae23f1PqvnrBE1ZL5owrMSKt+KrzERwlXhYDIzINjItolMofwIJJQ==",
+  "dgSpecHash": "/uGXN1PferUluZGj1LKj840XwBnnEuxOmHMSFjfahuigw4WsnK3eof06XzIbsWICyOW4BNHwQ/9KfJJp748IBA==",
   "success": true,
   "projectFilePath": "D:\\Programming\\repos\\AttendanceSystem\\src\\AttendanceSystem\\RfidReader\\RfidReader.csproj",
   "expectedPackageFiles": [

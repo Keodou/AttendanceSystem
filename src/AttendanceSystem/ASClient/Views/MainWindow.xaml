@@ -21,15 +21,18 @@
         <!--CRUD operations-->
         <StackPanel Orientation="Horizontal" Margin="10,8,0,8" Grid.Column="0">
             <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" Width="100" Height="24"/>
-            <Button x:Name="UpdateStudent" Content="Добавить" VerticalAlignment="Top" 
+            <Button x:Name="UpdateStudent" Content="Д" VerticalAlignment="Top" 
                 FontSize="16"
                 Margin="10,-2,0,0"
-                Width="120" 
+                Width="34" 
                 Click="UpdateStudent_Click"/>
-            <Button x:Name="OpenHistory" Content="История" VerticalAlignment="Top" 
+            <Button x:Name="DeleteStudent" Content="У" Margin="10,-2,0,0" BorderThickness="0"
+                    FontSize="16" Width="16"
+                    Click="DeleteStudent_Click"/>
+            <Button x:Name="OpenHistory" Content="И" VerticalAlignment="Top" 
                 FontSize="16"
                 Margin="10,-2,0,0"
-                Width="120" Click="OpenHistory_Click"/>
+                Width="34" Click="OpenHistory_Click"/>
         </StackPanel>
 
         <!--Students Table-->
@@ -45,13 +48,6 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="EditStudent" Content="Р" BorderThickness="0" Click="EditStudent_Click"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="40">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="DeleteStudent" Content="У" BorderBrush="Red" BorderThickness="0" Click="DeleteStudent_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

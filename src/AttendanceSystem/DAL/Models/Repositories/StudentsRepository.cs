@@ -50,10 +50,15 @@ namespace DAL
             _dbContext.Entry(entry).State = EntityState.Detached;
         }
 
+        public void Delete(IEnumerable<Student> entries)
+        {
+            _dbContext.Students.RemoveRange(entries);
+            _dbContext.SaveChanges();
+        }
+
         public void Delete(Student? entry)
         {
-            _dbContext.Students.Remove(entry);
-            _dbContext.SaveChanges();
+            throw new NotImplementedException();
         }
     }
 }

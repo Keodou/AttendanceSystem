@@ -39,7 +39,7 @@
         <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="1" FontSize="16" Margin="15,101,144,61"/>
         <PasswordBox x:Name="Password" Grid.Column="1" Grid.Row="1" 
                  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,127,0,0" 
-                 FontSize="15"  Width="220" BorderBrush="Blue" Height="25"/>
+                 FontSize="15"  Width="220" Height="25"/>
 
         <!--Buttons-->
         <Button x:Name="Enter" Content="Войти" 

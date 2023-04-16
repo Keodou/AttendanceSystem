@@ -1,6 +1,4 @@
-﻿using DAL.Models.Entities;
-
-namespace DAL.Models.Entities
+﻿namespace DAL.Models.Entities
 {
     public class Student
     {

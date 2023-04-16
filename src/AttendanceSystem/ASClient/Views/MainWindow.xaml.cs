@@ -2,6 +2,7 @@
 using DAL;
 using DAL.Models.Entities;
 using DAL.Models.Repositories;
+using Microsoft.EntityFrameworkCore;
 using RfidReader;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace ASClient
         private Schedule _schedule;
         private ScheduleFiller _scheduleFiller;
 
-        public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository, 
+        public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository,
             GroupsRepository groupsRepository)
         {
             InitializeComponent();
@@ -117,7 +118,7 @@ namespace ASClient
 
         private void DeleteStudent_Click(object sender, RoutedEventArgs e)
         {
-            try
+            /*try
             {
                 var student = StudentsList.SelectedItem as Student;
                 _studentsRepository.Delete(student);
@@ -129,12 +130,36 @@ namespace ASClient
             finally
             {
                 UpdateStudentsList();
+            }*/
+
+            var selectedObjects = StudentsList.SelectedItems.Cast<Student>().ToList();
+
+            if (selectedObjects.Count > 0)
+            {
+                if (MessageBox.Show($"Вы точно хотите удалить следующие {selectedObjects.Count()} элементов?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        _studentsRepository.Delete(selectedObjects);
+                        MessageBox.Show("Данные удалены");
+                        UpdateStudentsList();
+                    }
+                    catch (Exception ex)
+                    {
+                        RfidTag.Text = ex.Message.ToString();
+                    }
+                }
+            }
+            else
+            {
+                RfidTag.Text = "ОШИБКА! Не выбраны элементы для удаления";
             }
         }
 
         private void UpdateStudentsList()
         {
-            Dispatcher.Invoke(new Action(() => 
+            Dispatcher.Invoke(new Action(() =>
             { StudentsList.ItemsSource = _studentsRepository.GetEntries(GroupsList.SelectedItem as Group).ToList(); }));
         }
 
