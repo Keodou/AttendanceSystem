@@ -8,10 +8,6 @@
         MinHeight="350" MinWidth="650"
         WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
     <Grid ShowGridLines="False" Background="#e0e6ea">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="440"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
@@ -20,19 +16,37 @@
 
         <!--CRUD operations-->
         <StackPanel Orientation="Horizontal" Margin="10,8,0,8" Grid.Column="0">
-            <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" Width="100" Height="24"/>
+            <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" 
+                      Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" 
+                      Width="100" Height="24"/>
             <Button x:Name="UpdateStudent" Content="Д" VerticalAlignment="Top" 
                 FontSize="16"
                 Margin="10,-2,0,0"
                 Width="34" 
                 Click="UpdateStudent_Click"/>
+            <Button x:Name="EditStudent" Content="Р" BorderThickness="0" 
+                    FontSize="16" Margin="10,-2,0,0" 
+                    Width="34" Click="EditStudent_Click"/>
             <Button x:Name="DeleteStudent" Content="У" Margin="10,-2,0,0" BorderThickness="0"
-                    FontSize="16" Width="16"
+                    FontSize="16" Width="34"
                     Click="DeleteStudent_Click"/>
             <Button x:Name="OpenHistory" Content="И" VerticalAlignment="Top" 
                 FontSize="16"
                 Margin="10,-2,0,0"
                 Width="34" Click="OpenHistory_Click"/>
+            <ComboBox x:Name="PortsList" 
+                  Margin="10,-2,0,0"
+                  Width="100" Height="24" Grid.Column="1"/>
+            <Button x:Name="ButtonConnectPort" 
+                Content="П" 
+                FontSize="16" Margin="10,-2,0,0"
+                Click="ButtonConnectPort_Click"
+                Width="36"
+                BorderThickness="0"/>
+            <Button x:Name="ButtonUpdatePorts" Content="О" 
+                HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Center" 
+                FontSize="16" Click="ButtonUpdatePorts_Click" 
+                Width="36" Grid.Column="1" BorderThickness="0"/>
         </StackPanel>
 
         <!--Students Table-->
@@ -44,13 +58,6 @@
                 <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="300"/>
                 <DataGridTextColumn Binding="{Binding Group.Number}" Header="Группа" Width="*"/>
                 <DataGridTextColumn Binding="{Binding AttendanceTime, ConverterCulture=ru-ru}" Header="Время прихода" Width="*"/>
-                <DataGridTemplateColumn Width="40">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="EditStudent" Content="Р" BorderThickness="0" Click="EditStudent_Click"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -61,22 +68,5 @@
                FontSize="12" FontWeight="Bold"
                Height="20"
                Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Button x:Name="ButtonConnectPort" 
-                Content="Подключиться" 
-                HorizontalAlignment="Left" VerticalAlignment="Center" 
-                FontSize="16" 
-                Margin="308,0,0,0" 
-                Click="ButtonConnectPort_Click" 
-                Width="122"
-                Grid.Row="0" Grid.Column="1"
-                Focusable="False" Height="25"
-                BorderThickness="0"/>
-        <Button x:Name="ButtonUpdatePorts" Content="Обновить" 
-                HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Center" 
-                FontSize="16" Click="ButtonUpdatePorts_Click" 
-                Width="120" Grid.Column="1" BorderThickness="0"/>
-        <ComboBox x:Name="PortsList" 
-                  HorizontalAlignment="Left" Margin="49,0,0,0" VerticalAlignment="Center" 
-                  Width="120" Height="24" Grid.Column="1"/>
     </Grid>
 </Window>

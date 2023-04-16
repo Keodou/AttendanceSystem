@@ -180,7 +180,7 @@ namespace ASClient
                 if (!editWindow.IsActive) UpdateStudentsList();
             }
             else
-                RfidTag.Text = "ОШИБКА! Выберите обьект для изменения";
+                RfidTag.Text = "ОШИБКА! Не выбран обьект для изменения";
         }
 
         private void GroupsList_Loaded(object sender, RoutedEventArgs e)
