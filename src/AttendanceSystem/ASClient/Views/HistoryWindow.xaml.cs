@@ -24,7 +24,12 @@ namespace ASClient.Views
             GroupsList.ItemsSource = groupsRepository.GetGroups().ToList();
             _schedule = new Schedule();
             _scheduleFiller = new ScheduleFiller(_schedule);
-            PairsList.ItemsSource = _scheduleFiller.GetSchedule();
+            var pairs = _scheduleFiller.GetSchedule();
+            pairs.Insert(0, new Schedule()
+            {
+                PairNumber = "Не выбрано"
+            });
+            PairsList.ItemsSource = pairs;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -61,14 +66,14 @@ namespace ASClient.Views
         private void UpdateRecords(DateTime date, string pair)
         {
             List<AttendanceRecord> list = _recordsRepository.GetAttendanceRecords();
-            if (GroupsList.SelectedIndex > 0 && PairsList.SelectedIndex >= 0)
+            if (GroupsList.SelectedIndex > 0 && PairsList.SelectedIndex > 0)
             {
                 list = _recordsRepository.GetAttendanceRecords(GroupsList.SelectedItem as Group, date, pair)
                     .DistinctBy(a => a.Student.Name).ToList();
             }
             else
             {
-                list = _recordsRepository.GetAttendanceRecords(date).DistinctBy(a => a.Student.Name).ToList();
+                list = _recordsRepository.GetAttendanceRecords(date).DistinctBy(a => a.Pair).ToList();
             }
             EntriesList.ItemsSource = list;
         }
