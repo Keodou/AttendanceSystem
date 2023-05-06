@@ -1,7 +1,6 @@
 ﻿using DAL.Data;
 using DAL.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace DAL.Models.Repositories
 {

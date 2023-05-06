@@ -68,13 +68,19 @@ namespace ASClient.Views
             if (GroupsList.SelectedIndex > 0 && PairsList.SelectedIndex > 0)
             {
                 list = _recordsRepository.GetAttendanceRecords(GroupsList.SelectedItem as Group, date, pair)
-                    .DistinctBy(a => a.Student.Name).ToList();
+                    .GroupBy(a => new { a.Student.Name, a.Pair })
+                    .Select(g => g.First())
+                    .ToList();
+                EntriesList.ItemsSource = list;
             }
             else
             {
-                list = _recordsRepository.GetAttendanceRecords(date).DistinctBy(a => a.Pair).ToList();
+                list = _recordsRepository.GetAttendanceRecords(date)
+                    .GroupBy(a => new { a.Student.Name, a.Pair })
+                    .Select(g => g.First())
+                    .ToList();
+                EntriesList.ItemsSource = list;
             }
-            EntriesList.ItemsSource = list;
         }
 
         private void PairsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

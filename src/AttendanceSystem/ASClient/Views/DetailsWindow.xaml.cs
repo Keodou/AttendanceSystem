@@ -22,6 +22,7 @@ namespace ASClient.Views
             HistoryList.ItemsSource = _attendanceRecords
                 .DistinctBy(l => l.Pair)
                 .OrderBy(l => l.Pair).ToList();
+            //HistoryList.ItemsSouыrce = student.AttendanceRecords;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)

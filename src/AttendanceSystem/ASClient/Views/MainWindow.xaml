@@ -37,16 +37,16 @@
             <ComboBox x:Name="PortsList" 
                   Margin="10,-2,0,0"
                   Width="100" Height="24" Grid.Column="1"/>
+            <Button x:Name="ButtonUpdatePorts" Content="О" 
+                HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Center" 
+                FontSize="16" Click="ButtonUpdatePorts_Click" 
+                Width="36" Grid.Column="1" BorderThickness="0"/>
             <Button x:Name="ButtonConnectPort" 
                 Content="ВКЛ" 
                 FontSize="16" Margin="10,-2,0,0"
                 Click="ButtonConnectPort_Click"
                 Width="36"
                 BorderThickness="0"/>
-            <Button x:Name="ButtonUpdatePorts" Content="О" 
-                HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Center" 
-                FontSize="16" Click="ButtonUpdatePorts_Click" 
-                Width="36" Grid.Column="1" BorderThickness="0"/>
         </StackPanel>
 
         <!--Students Table-->
