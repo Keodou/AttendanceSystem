@@ -19,34 +19,57 @@
             <ComboBox x:Name="GroupsList" DisplayMemberPath="Number" 
                       Loaded="GroupsList_Loaded" SelectionChanged="GroupsList_SelectionChanged" 
                       Width="100" Height="24"/>
-            <Button x:Name="UpdateStudent" Content="Д" VerticalAlignment="Top" 
-                FontSize="16"
+            <Button x:Name="UpdateStudent" VerticalAlignment="Top" 
+                FontSize="16" FontWeight="Bold"
                 Margin="10,-2,0,0"
                 Width="34" 
-                Click="UpdateStudent_Click"/>
-            <Button x:Name="EditStudent" Content="Р" BorderThickness="0" 
+                Click="UpdateStudent_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Views/AddButton2.png" Height="26" Width="34"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="EditStudent" BorderThickness="0"
                     FontSize="16" Margin="10,-2,0,0" 
-                    Width="34" Click="EditStudent_Click"/>
-            <Button x:Name="DeleteStudent" Content="У" Margin="10,-2,0,0" BorderThickness="0"
+                    Width="34" Click="EditStudent_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Views/EditButton6.png" Height="20" Width="34"></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="DeleteStudent" Margin="10,-2,0,0" BorderThickness="0"
                     FontSize="16" Width="34"
-                    Click="DeleteStudent_Click"/>
-            <Button x:Name="OpenHistory" Content="И" VerticalAlignment="Top" 
+                    Click="DeleteStudent_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Views/Images/Icons/DeleteButton.png" Height="20" Width="34"></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="OpenHistory" VerticalAlignment="Top" 
                 FontSize="16"
                 Margin="10,-2,0,0"
-                Width="34" Click="OpenHistory_Click"/>
+                Width="34" Click="OpenHistory_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Views/Images/Icons/history.png" Height="20" Width="34"></Image>
+                </StackPanel>
+            </Button>
             <ComboBox x:Name="PortsList" 
                   Margin="10,-2,0,0"
                   Width="100" Height="24" Grid.Column="1"/>
-            <Button x:Name="ButtonUpdatePorts" Content="О" 
+            <Button x:Name="ButtonUpdatePorts" 
                 HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Center" 
                 FontSize="16" Click="ButtonUpdatePorts_Click" 
-                Width="36" Grid.Column="1" BorderThickness="0"/>
+                Width="36" Grid.Column="1" BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Views/Images/Icons/Update.png" Height="20" Width="34"></Image>
+                </StackPanel>
+            </Button>
             <Button x:Name="ButtonConnectPort" 
-                Content="ВКЛ" 
                 FontSize="16" Margin="10,-2,0,0"
                 Click="ButtonConnectPort_Click"
                 Width="36"
-                BorderThickness="0"/>
+                BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Views/Images/Icons/Input.png" Height="20" Width="34"></Image>
+                </StackPanel>
+            </Button>
         </StackPanel>
 
         <!--Students Table-->

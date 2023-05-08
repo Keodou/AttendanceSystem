@@ -11,6 +11,12 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="Views\AddButton2.png" />
+    <None Remove="Views\EditButton6.png" />
+    <None Remove="Views\Images\Icons\DeleteButton.png" />
+    <None Remove="Views\Images\Icons\history.png" />
+    <None Remove="Views\Images\Icons\Input.png" />
+    <None Remove="Views\Images\Icons\Update.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +54,15 @@
 
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\AddButton2.png" />
+    <Resource Include="Views\EditButton6.png" />
+    <Resource Include="Views\Images\Icons\DeleteButton.png" />
+    <Resource Include="Views\Images\Icons\history.png" />
+    <Resource Include="Views\Images\Icons\Input.png" />
+    <Resource Include="Views\Images\Icons\Update.png" />
   </ItemGroup>
 
 </Project>

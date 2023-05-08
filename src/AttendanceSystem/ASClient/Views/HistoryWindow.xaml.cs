@@ -1,8 +1,5 @@
 ﻿using DAL.Models.Entities;
 using DAL.Models.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 
 namespace ASClient.Views
