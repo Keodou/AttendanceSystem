@@ -39,8 +39,8 @@ namespace ASClient.Views
         private void UpdateRecords(DateTime date)
         {
             var list = _attendanceRecords.Where(l => l.AttendanceDate == date)
-                .DistinctBy(l => l.Pair)
-                .OrderBy(l => l.Pair)
+                .GroupBy(a => new { a.Pair })
+                .Select(g => g.First())
                 .ToList();
             HistoryList.ItemsSource = list;
         }

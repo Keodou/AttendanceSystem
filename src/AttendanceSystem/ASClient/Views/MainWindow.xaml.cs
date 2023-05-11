@@ -91,7 +91,7 @@ namespace ASClient
 
         private void ButtonConnectPort_Click(object sender, RoutedEventArgs e)
         {
-            if (ButtonConnectPort.Content.ToString() == "ВКЛ")
+            if (PortsList.IsEnabled == true)
             {
                 try
                 {
@@ -100,19 +100,17 @@ namespace ASClient
                     _rfidPort.Open();
                     PortsList.IsEnabled = false;
                     ButtonUpdatePorts.IsEnabled = false;
-                    ButtonConnectPort.Content = "ВЫКЛ";
                 }
                 catch
                 {
                     RfidTag.Text = "ОШИБКА! Не инициализирован COM-порт устройства.";
                 }
             }
-            else if (ButtonConnectPort.Content.ToString() == "ВЫКЛ")
+            else if (PortsList.IsEnabled == false)
             {
                 _rfidPort.Close();
                 ButtonUpdatePorts.IsEnabled = true;
                 PortsList.IsEnabled = true;
-                ButtonConnectPort.Content = "ВКЛ";
             }
         }
 
