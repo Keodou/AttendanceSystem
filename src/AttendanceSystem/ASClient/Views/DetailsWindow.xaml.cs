@@ -1,8 +1,5 @@
 ﻿using DAL;
 using DAL.Models.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -20,9 +17,9 @@ namespace ASClient.Views
             InitializeComponent();
             _attendanceRecords = student.AttendanceRecords;
             HistoryList.ItemsSource = _attendanceRecords
-                .DistinctBy(l => l.Pair)
-                .OrderBy(l => l.Pair).ToList();
-            //HistoryList.ItemsSouыrce = student.AttendanceRecords;
+                .GroupBy(a => new { a.AttendanceDate, a.Pair })
+                .Select(g => g.First())
+                .OrderBy(l => l.AttendanceTime).ToList();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)

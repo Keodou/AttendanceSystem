@@ -51,7 +51,7 @@
                 </StackPanel>
             </Button>
             <ComboBox x:Name="PortsList" 
-                  Margin="10,-2,0,0"
+                  Margin="10,0,0,0"
                   Width="100" Height="24" Grid.Column="1"/>
             <Button x:Name="ButtonUpdatePorts" 
                 HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Center" 
