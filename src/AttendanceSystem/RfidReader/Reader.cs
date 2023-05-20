@@ -2,7 +2,7 @@
 
 namespace RfidReader
 {
-    public class Reader : SerialPort
+    public class Reader
     {
         private SerialPort _rfidReader;
 
@@ -20,7 +20,7 @@ namespace RfidReader
             _rfidReader = rfidReader;
         }
 
-        public string[] GetPortsArray => GetPortNames();
+        public string[] GetPortsArray => SerialPort.GetPortNames();
 
         public string SelectPort()
         {

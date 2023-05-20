@@ -8,8 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
+using System.Text;
 using System.Windows;
-using System.Windows.Documents;
 
 namespace ASClient
 {
@@ -24,8 +24,8 @@ namespace ASClient
         private Reader _reader;
         private SerialPort _rfidPort;
         private DeterminantPair _determinantPair;
-        private Schedule _schedule;
-        private ScheduleFiller _scheduleFiller;
+        private Pair _schedule;
+        private PairFiller _scheduleFiller;
 
         public MainWindow(StudentsRepository studentsRepository, AttendanceRecordsRepository recordsRepository,
             GroupsRepository groupsRepository)
@@ -34,11 +34,11 @@ namespace ASClient
             _studentsRepository = studentsRepository;
             _recordsRepository = recordsRepository;
             _groupsRepository = groupsRepository;
-            _rfidPort = new();
+            _rfidPort = new() { BaudRate = 9600 };
             _reader = new(_rfidPort);
             _rfidPort.DataReceived += new(Recieve);
-            _schedule = new Schedule();
-            _scheduleFiller = new ScheduleFiller(_schedule);
+            _schedule = new Pair();
+            _scheduleFiller = new PairFiller(_schedule);
             _determinantPair = new DeterminantPair(_scheduleFiller.GetSchedule());
         }
 
@@ -91,26 +91,53 @@ namespace ASClient
 
         private void ButtonConnectPort_Click(object sender, RoutedEventArgs e)
         {
-            if (PortsList.IsEnabled == true)
+            if (PortsList.IsEnabled)
             {
                 try
                 {
-                    RfidTag.Text = "";
-                    _rfidPort.PortName = PortsList.Text;
-                    _rfidPort.Open();
-                    PortsList.IsEnabled = false;
-                    ButtonUpdatePorts.IsEnabled = false;
+                    ConnectToRfidReader();
+                    if (_rfidPort.IsOpen)
+                    {
+                        PortsList.IsEnabled = false;
+                        ButtonUpdatePorts.IsEnabled = false;
+                        RfidTag.Text = "";
+                    }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    RfidTag.Text = "ОШИБКА! Не инициализирован COM-порт устройства.";
+                    RfidTag.Text = $"ОШИБКА! Не инициализирован COM-порт устройства: {ex.Message}";
                 }
             }
-            else if (PortsList.IsEnabled == false)
+            else
             {
                 _rfidPort.Close();
                 ButtonUpdatePorts.IsEnabled = true;
                 PortsList.IsEnabled = true;
+            }
+        }
+
+        private void ConnectToRfidReader()
+        {
+            try
+            {
+                if (_rfidPort != null && _rfidPort.IsOpen)
+                {
+                    _rfidPort.Close();
+                }
+
+                _rfidPort.PortName = PortsList.Text;
+                _rfidPort.BaudRate = 9600;
+                _rfidPort.Parity = Parity.None;
+                _rfidPort.DataBits = 8;
+                _rfidPort.StopBits = StopBits.One;
+                _rfidPort.Handshake = Handshake.None;
+                _rfidPort.Encoding = Encoding.ASCII;
+
+                _rfidPort.Open();
+            }
+            catch (Exception ex)
+            {
+                RfidTag.Text = $"Ошибка инициализации COM-порта: {ex.Message}";
             }
         }
 

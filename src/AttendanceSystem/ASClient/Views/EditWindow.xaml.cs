@@ -32,8 +32,12 @@ namespace ASClient
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
             if (_student.Name == "" || _student.RfidTag == "" || _student.Group == null)
+            {
                 MessageBox.Show("ОШИБКА! Поля не заполнены");
+                return;
+            }
 
+            _student.AttendanceTime = new DateTime(12, 12, 2000);
             _studentsRepository.Save(_student);
             Close();
         }

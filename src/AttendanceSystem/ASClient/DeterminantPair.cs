@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace ASClient
+﻿namespace ASClient
 {
     public class DeterminantPair
     {
-        private List<Schedule> _schedules;
+        private List<Pair> _pairs;
 
-        public DeterminantPair(List<Schedule> schedules)
+        public DeterminantPair(List<Pair> pairs)
         {
-            _schedules = schedules;
+            _pairs = pairs;
         }
 
         public string GetPairByTime(DateTime attendanceDateTime)
@@ -32,11 +28,12 @@ namespace ASClient
 
             // Определение текущей пары
             int currentPair = 0;
-            for (int i = 0; i < _schedules.Count; i++)
+            for (int i = 0; i < _pairs.Count - 1; i++)
             {
-                if (currentTime >= _schedules[i].StartPair && currentTime < _schedules[i + 1].StartPair)
+                if (currentTime >= _pairs[i].StartPair && currentTime < _pairs[i + 1].StartPair)
                 {
                     currentPair = i + 1;
+                    break;
                 }
             }
 

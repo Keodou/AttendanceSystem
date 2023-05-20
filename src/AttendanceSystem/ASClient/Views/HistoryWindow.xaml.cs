@@ -10,18 +10,18 @@ namespace ASClient.Views
     public partial class HistoryWindow : Window
     {
         private readonly AttendanceRecordsRepository _recordsRepository;
-        private readonly Schedule _schedule;
-        private readonly ScheduleFiller _scheduleFiller;
+        private readonly Pair _schedule;
+        private readonly PairFiller _scheduleFiller;
 
         public HistoryWindow(AttendanceRecordsRepository recordsRepository, GroupsRepository groupsRepository)
         {
             InitializeComponent();
             _recordsRepository = recordsRepository;
             GroupsList.ItemsSource = groupsRepository.GetGroups().ToList();
-            _schedule = new Schedule();
-            _scheduleFiller = new ScheduleFiller(_schedule);
+            _schedule = new Pair();
+            _scheduleFiller = new PairFiller(_schedule);
             var pairs = _scheduleFiller.GetSchedule();
-            pairs.Insert(0, new Schedule()
+            pairs.Insert(0, new Pair()
             {
                 PairNumber = "Не выбрано"
             });
@@ -82,7 +82,7 @@ namespace ASClient.Views
 
         private void PairsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            var pair = PairsList.SelectedItem as Schedule;
+            var pair = PairsList.SelectedItem as Pair;
             string pairStr = pair.PairNumber;
             UpdateRecords(Convert.ToDateTime(DatesList.SelectedDate), pairStr);
         }
